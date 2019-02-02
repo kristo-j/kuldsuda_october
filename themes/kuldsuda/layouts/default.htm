@@ -1,0 +1,77 @@
+description = "default layout"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{ 'assets/scripts/bootstrap/css/bootstrap.min.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/scripts/bootstrap/css/bootstrap-grid.min.css'|theme }}" rel="stylesheet">
+        <link href="{{ 'assets/scripts/bootstrap/css/bootstrap-reboot.min.css'|theme }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ 'assets/styles/style.css'|theme }}" type="text/css">
+        {% styles %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title"              content="Kuldsüda" />
+        <meta property="og:description"        content="Tunnusta head kolleegi või märgatud eeskuju!" />
+        <meta property="og:image:width" 	   content="1200" />
+        <meta property="og:image:height" 	   content="630" />
+
+        <link rel="shortcut icon" type="image/x-icon" href="./photos/Fav-01.png" />
+        <title>Tunnusta head kolleegi või märgatud eeskuju!</title>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-89295154-7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-89295154-7');
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            // Load the linker plugin.
+            ga('require', 'linker');
+
+            // Define which domains to autoLink.
+            ga('linker:autoLink', ['cv.ee', 'cv.lv','cvonline.lt','cvonline.com','www.cv.ee','www.cv.lv','www.cvonline.lt','www.cvonline.com','files.cv.ee','nipila.ee','www.nipila.ee', 'kuldsuda.ee', 'www.kuldsuda.ee']);
+            ga('create', 'UA-8200810-3', 'auto',{'allowLinker': true});
+
+            ga('require', 'displayfeatures');
+            ga('require', 'linkid', 'linkid.js');
+            ga('send', 'pageview');
+
+            ga('create', 'UA-8200810-1', 'auto',{'allowLinker': true, 'name': 'T1'});
+            ga('T1.send', 'pageview');
+            ga('create', 'UA-9954163-1', 'auto',{'allowLinker': true, 'name': 'T2'});
+            ga('T2.send', 'pageview')
+        </script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="layout-header">
+
+        </header>
+
+        <!-- Content -->
+        <section id="layout-content">
+            {% page %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="layout-footer">
+
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/scripts/jquery/jquery-3.2.1.min.js'|theme }}"></script>
+        <script src="{{ 'assets/scripts/jquery/jquery.mobile.custom.min.js'|theme }}"></script>
+        <script src="{{ 'assets/scripts/bootstrap/js/bootstrap.min.js'|theme }}"></script>
+        <script src="{{ 'assets/scripts/notify/notify.min.js'|theme }}"></script>
+        <script src="{{ 'assets/scripts/pageScript.js'|theme }}"></script>
+        {% scripts %}
+
+    </body>
+</html>

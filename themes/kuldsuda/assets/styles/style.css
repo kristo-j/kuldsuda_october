@@ -1,0 +1,997 @@
+* {box-sizing: border-box}
+body, html{
+    font-family: Verdana, sans-serif;
+    margin:0;
+    height: 100%;
+}
+
+.mySlides {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+    height: 100%;
+    position: absolute;
+    margin: auto;
+}
+
+.slider{
+    overflow:hidden;
+}
+
+.facebookTutImg {
+    width: 40%;
+    padding-top: 15px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.modal-footer-block{
+    display: block; !important
+}
+
+.checkBoxDiv
+{
+    float: left;
+}
+
+.confTextDiv {
+    float: left;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+#confirmationCheckbox, #confirmationCheckboxSlide{
+    width: 20px;
+    height: 20px;
+}
+
+#modalCheck, #modalInfo{
+    float: left;
+}
+
+.selectStyleList{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    height: auto;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+.slideTitle {
+    display: inline-block;
+    background-color: white;
+    min-height: 5%;
+    height: auto;
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+    color: blue;
+    padding-top: 20px;
+    margin: auto;
+}
+
+.companyElement{
+    font-size: xx-large;
+    color: black;
+}
+
+.activityElement{
+    color: white;
+    font-size: xx-large;
+    background-color: #2e91d0;
+    padding: 5px 8px 5px 8px;
+    border-radius: 10px;
+}
+
+.slideTitleElement{
+    display: inline;
+}
+
+.bannerElement{
+    width: 100%;
+}
+
+.slideTitleSpan{
+    display: inline-block;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.buttonDiv {
+    font-size: 15px;
+    min-height: 15%;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 3em;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.buttonDivShare {
+    font-size: 15px;
+    min-height: 15%;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 1em;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.logoContainer{
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.orderDiv{
+    color: #f2f2f2;
+    font-size: 15px;
+    min-height: 15%;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 1em;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.orderText{
+    font-weight: 600px;
+    color: black;
+}
+
+.buttonDivTemplate {
+    font-size: 15px;
+    min-height: 15%;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    padding-top: 0px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-bottom: 20px;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+*/
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+}
+
+.title-text{
+    display: inline-block;
+    margin: auto;
+}
+
+.contentSection{
+    width: 100%;
+    /*min-height: 35%;*/
+    height: auto;
+    margin: auto;
+    padding-bottom: 30px;
+    display: block;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+}
+
+.creatorSection{
+    width: 100%;
+    min-height: 190px;
+    height: auto;
+    margin: auto;
+    padding-bottom: 30px;
+    display: block;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 10px;
+}
+
+.textAreaSection{
+    padding-top: 10px;
+}
+
+.textAreaInput{
+    height: 80%;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 30px 0;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    resize: none;
+    text-align: left;
+    color: #244999;
+}
+
+.compSection
+{
+    margin-top: 1em;
+}
+
+.generateCheckBoxSection
+{
+    width: 100%;
+    padding-left: 18%;
+    padding-right: 18%;
+    display: inline-block;
+    padding-top: 3em;
+}
+
+.photoSection{
+    width: 85%;
+    /*min-height: 35%;*/
+    height: auto;
+    margin: auto;
+    padding-bottom: 15px;
+    display: block;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.footerDiv{
+    width: 90%;
+    /*min-height: 35%;*/
+    height: auto;
+    margin: auto;
+    padding-bottom: 15px;
+    display: block;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10px;
+}
+
+.facebookTutorialDiv{
+    width: 100%;
+    /*min-height: 35%;*/
+    height: auto;
+    margin: auto;
+    padding-bottom: 15px;
+    display: block;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.tutorialText{
+    font-size: 22px;
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-top: 15px;
+}
+
+.templateSection{
+    width: 100%;
+    /*min-height: 30%;*/
+    height: auto;
+    margin: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.carouselSlide{
+    width: 100%;
+    height: 100%;
+}
+
+.carouselContent{
+    width: 100%;
+    height: 100%;
+}
+
+.actionLine{
+    display: block;
+    width: 100%;
+    min-height: 5%;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 51px;
+    margin-top: 10px;
+    color: #244999;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.inputNote{
+    padding-left: 20%;
+    padding-right: 20%;
+    font-size: 20px;
+    color: black;
+}
+
+.stepNumber{
+    display: block;
+    width: 100%;
+    min-height: 5%;
+    height: auto;
+    font-size: large;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 30px;
+    font-weight: 400;
+    color: #244999;
+}
+
+.informationLine{
+    display: block;
+    width: 100%;
+    min-height: 10%;
+    height: auto;
+    font-size: x-large;
+    color: black;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin-top: 15px;
+}
+
+.actionText{
+    display: block;
+    width: 100%;
+    min-height: 10%;
+    height: auto;
+    font-size: 37px;
+    font-weight: 400;
+    color: black;
+    padding-left: 18%;
+    padding-right: 18%;
+    margin-top: 15px;
+    line-height: 1.2;
+}
+
+.creatorActionText{
+    display: block;
+    width: 100%;
+    min-height: 10%;
+    height: auto;
+    font-size: 50px;
+    font-weight: 200;
+    color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 15px;
+}
+
+.inheritDimension{
+    width: 100%;
+    height: 100%;
+}
+
+.examplesText{
+    font-weight: 700;
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.templateImage{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.imageContainer{
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.orderHeader{
+    background-color: #FFCB31;
+}
+
+p.carousel-control-prev.elegant-control-prev ,
+p.carousel-control-next.elegant-control-next ,
+p.carousel-control-prev.fun-control-prev ,
+p.carousel-control-next.fun-control-next{
+    width: 10%;
+}
+
+span.carousel-control-prev-icon,
+span.carousel-control-next-icon{
+    width: 80%;
+    height: 80%;
+}
+
+
+.companyInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 30px 0;
+    display: inline-block;
+    height: 90px;
+    border-radius: 8px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+}
+
+.nameInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 30px 0;
+    display: inline-block;
+    height: 90px;
+    border-radius: 8px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+}
+
+.titleInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 30px 0;
+    display: inline-block;
+    height: 90px;
+    border-radius: 8px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+}
+
+.creatorInput{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 30px 0;
+    display: inline-block;
+    height: 90px;
+    border-radius: 8px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+}
+
+.modalInput{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    height: auto;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    font-size: 25px;
+}
+
+.modalInput::placeholder{
+    font-size: 25px;
+}
+
+.noticeText{
+    padding-top: 10px;
+    padding-left: 8%;
+    padding-right: 8%;
+    color: red;
+    font-size: 12px;
+
+}
+
+.modalTextArea{
+    text: 2em;
+    height: 6em;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 8px;
+    font-size: 30px;
+    border: 1px solid #ccc;
+    resize: none;
+    text-align: left;
+    color: #244999;
+}
+
+#confirmationChechbox{
+    width: 30px;
+    height: 30px;
+}
+
+.forwardButton, .generatePicture, .addPersonName{
+    min-width: 210px;
+    width: 60%;
+    min-height: 70px;
+    height: auto;
+    background-color: #244999;
+    border-color: #244999;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    word-break: keep-all;
+}
+
+.shareButton{
+    min-width: 210px;
+    width: 40%;
+    min-height: 70px;
+    height: auto;
+    background-color: #244999;
+    border-color: #244999;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    word-break: keep-all;
+}
+
+.modalShareButton{
+    min-width: 210px;
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+    background-color: #244999;
+    border-color: #244999;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 2em;
+    margin-right: 2em;
+    word-break: keep-all;
+}
+
+.finishButton{
+    min-width: 210px;
+    width: 80%;
+    min-height: 70px;
+    height: auto;
+    background-color: #244999;
+    border-color: #244999;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+    word-break: keep-all;
+}
+
+.orderButton{
+    min-width: 210px;
+    width: 80%;
+    min-height: 70px;
+    height: auto;
+    background-color: #FFCB31;
+    border-color: #FFCB31;
+    color: white;
+    border-radius: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.orderButton:hover{
+    background-color: #f7a74a;
+}
+.finishButton:hover{
+    background-color: #548aff;
+}
+
+.templateSelection{
+    min-width: 210px;
+    width: auto;
+    height: 50px;
+    background-color: #517ad2;
+    border-color: #517ad2;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    margin: 5px 5px;
+}
+
+.templateSelection:hover{
+    background-color: #1790e4;
+}
+
+.selected{
+    background-color: #1790e4;
+}
+
+.forwardButton:hover,
+.shareButton:hover,
+.generatePicture:hover,
+.addPersonName:hover{
+    background-color: #548aff;
+}
+
+.borderStyle{
+    border: 2px solid #244999;
+}
+
+.errorBorderStyle{
+    border: 2px solid red;
+}
+
+input{
+    text-align: center;
+    color: #244999;
+}
+
+.form-group::placeholder{
+    color: #244999;
+}
+
+.checkBoxSection{
+    font-size: 11px;
+    display: inline-block;
+}
+
+.form-group{
+    width: 80%;
+}
+
+.textMarker{
+    background-color: #ffffff00;
+    color: #244999;
+    font-weight: 700;
+}
+
+.modalSelect{
+    width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+    height: auto;
+    border-radius: 8px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+    font-size: 25px;
+}
+
+.selectTitle{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.orderModalTitle{
+    font-weight: 600;
+    font-size: 18;
+    padding-bottom: 10px;
+}
+
+.fb-like {
+    width: 80%;
+}
+
+#u_0_0 {
+    margin: 0 auto;
+}
+
+.fbShareDiv {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#fb-root {
+    display: none;
+}
+
+.fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
+    width: 100% !important;
+}
+
+@media only screen and (max-width: 400px) {
+    .buttonDivTemplate {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .tutorialText{
+        font-size: 16px;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-top: 10px;
+    }
+
+    .actionLine{
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .informationLine{
+        font-size: 15px;
+        padding-left: 5%;
+        padding-right: 5%
+    }
+
+    .buttonDiv, .orderFinishSection{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .forwardButton, .addPersonName{
+        width: 80%;
+    }
+
+    .actionText{
+        font-weight: 700;
+        font-size: 19px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .creatorActionText{
+        font-weight: 700;
+        font-size: 19px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .inputNote{
+        font-size: 15px;
+        font-weight: 500;
+        padding-left: 10%;
+        padding-right; 10%;
+    }
+
+    .form-group::placeholder{
+        color: #244999;
+        font-size: 25px;
+    }
+
+    .form-group{
+        font-size: 25px;
+        width: 100%;
+    }
+
+    #sendToPrint,
+    #shareToFacebook,
+    #sendEmailModal{
+        width: 80%;
+    }
+
+    .photoSection, .footerDiv{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .templateSection{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .buttonDivTemplate {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .tutorialText{
+        font-size: 16px;
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-top: 10px;
+    }
+
+    .actionLine{
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .informationLine{
+        font-size: 15px;
+        padding-left: 5%;
+        padding-right: 5%
+    }
+
+    .buttonDiv{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .forwardButton, .addPersonName{
+        width: 80%;
+    }
+
+    .actionText{
+        font-weight: 700;
+        font-size: 21px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .creatorActionText{
+        font-weight: 700;
+        font-size: 21px;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .inputNote{
+        font-size: 17px;
+        font-weight: 500;
+        padding-left: 10%;
+        padding-right; 10%;
+    }
+
+    .form-group::placeholder{
+        color: #244999;
+        font-size: 27px;
+    }
+
+    .form-group{
+        font-size: 27px;
+        width: 100%;
+    }
+
+    #sendToPrint, #shareToFacebook{
+        width: 80%;
+    }
+
+    .photoSection, .footerDiv{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .templateSection{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .facebookTutImg{
+        width: 100%;
+    }
+
+    .fbShareDiv {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .buttonDivTemplate {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .fbShareDiv {
+        padding-left: 20%;
+        padding-right: 20%;
+    }
+
+    .informationLine{
+        font-size: 15px;
+        padding-left: 5%;
+        padding-right: 5%
+    }
+
+    .photoSection
+    {
+        width: 100%;
+    }
+
+    .shareButton
+    {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .buttonDivTemplate {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .tutorialText{
+        font-size: 20px;
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 13px;
+    }
+
+    .bannerElement{
+        width: 60%;
+    }
+
+    .facebookTutImg{
+        width: 40%;
+    }
+}

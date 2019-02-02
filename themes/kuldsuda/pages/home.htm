@@ -1,0 +1,381 @@
+title = "home"
+url = "/"
+layout = "default"
+description = "kuldsuda home"
+is_hidden = 0
+==
+use Cms\Classes\Theme;
+
+function onStart() {
+    $theme = Theme::getActiveTheme();
+    $files_lobus = [];
+    $files_elegantne = [];
+    $count_lobus = 1;
+    $count_elegant = 1;
+    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne');
+    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_lobus');
+
+    foreach (new \RecursiveIteratorIterator($di) as $filename => $file) {
+        if ($file->getFilename() == "." OR $file->getFilename() == "..")
+            continue;
+        $files_elegantne[] = str_replace($theme->getActiveTheme()->getPath(), '', $filename);
+        $count_elegant++;
+    }
+
+    foreach (new \RecursiveIteratorIterator($dil) as $filename => $file) {
+        if ($file->getFilename() == "." OR $file->getFilename() == "..")
+            continue;
+        $files_lobus[] = str_replace($theme->getActiveTheme()->getPath(), '', $filename);
+        $count_lobus++;
+    }
+
+    $this['files_elegantne'] = $files_elegantne;
+    $this['files_lobus'] = $files_lobus;
+    $this['count_elegant'] = $count_elegant;
+    $this['count_lobus'] = $count_lobus;
+}
+==
+<div class="slideshow-container col-12">
+
+    <div class="mySlides ">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="actionLine" align="center"><p>Tunnusta head kolleegi või märgatud eeskuju!</p></div>
+        <div class="informationLine" align="center">
+            <div>
+                <p>
+                    Oscareid jagatakse kord aastas, ka TOP tööandjad on valitud,
+                    aga kuldsüdameid saab jagada ka siis, kui kiitmise tunne peale tuleb.
+                    <mark class="textMarker">Võta 3 minutit,</mark> et tunnustada silmapaistvat kolleegi või kedagi tõeliselt
+                    eeskujulikku töötegijat kuldsüdamega. Vali välja sobiv tiitel ning
+                    edasta see tema <mark class="textMarker">Facebooki</mark> seinale või e-mailile.
+                </p>
+                <p class="examplesText">
+                    Vaata erinevaid näidiseid
+                </p>
+            </div>
+        </div>
+        <div class="photoSection" align="center">
+            <div id="carouselSection" class="carousel slide carouselContent exampleCarousel" data-ride="carousel" data-interval="false" style="display: none;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="imageContainer">
+                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_1c.png'|theme }}" alt="picture" class="img-responsive"/>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="imageContainer">
+                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_2c.png'|theme }}" alt="picture" class="img-responsive"/>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="imageContainer">
+                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_3c.png'|theme }}" alt="picture" class="img-responsive"/>
+                        </div>
+                    </div>
+                </div>
+                <p class="carousel-control-prev example-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </p>
+                <p class="carousel-control-next example-control-next" href="" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </p>
+            </div>
+        </div>
+        <div class="photoSection compSection" align="center">
+            <img class="imageContainer" src="{{ '/assests/images/1200x628px_imago_uus_loos-01.svg'|theme }}" alt="" />
+        </div>
+        <div class="buttonDiv">
+            <button id="1" type="button" class="forwardButton">Alustan</button>
+        </div>
+    </div>
+
+    <div class="mySlides ">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="stepNumber" align="center">Samm 1/5</div>
+        <div class="actionText" align="center">
+            <p>Vali sobiv kuldsüda, vajutades noolt paremale või vasakule</p>
+        </div>
+
+        <div class="templateSection" align="center">
+            <div id="carouselSection" class="carousel slide carouselContent carouselSectionFun" data-ride="carousel" data-interval="false" style="display: none;">
+                <div class="carousel-inner carousel-fun">
+                    {% for i in 1..count_lobus-1 %}
+                        {% if i == 1 %}
+                            <div class="carousel-item active ">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <p class="carousel-control-prev fun-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </p>
+                <p class="carousel-control-next fun-control-next" href="" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </p>
+            </div>
+
+            <div id="carouselSection" class="carousel slide carouselContent carouselSectionElegant" data-ride="carousel" data-interval="false" style="display: none;">
+                <div class="carousel-inner carousel-elegant">
+                    {% for i in 1..count_elegant-1 %}
+                        {% if i == 1 %}
+                            <div class="carousel-item active ">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <p class="carousel-control-prev elegant-control-prev" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </p>
+                <p class="carousel-control-next elegant-control-next" href="" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </p>
+            </div>
+
+        </div>
+        <div class="buttonDivTemplate" align="center">
+            <p>Vajuta allolevale nupule, et valida kas lõbus või elegantne disain</p>
+            <div>
+                <button id="elegantDesign" type="button" class="templateSelection selected">Elegantne disain</button>
+                <button id="funDesign" type="button" class="templateSelection">Lõbus disain</button>
+            </div>
+        </div>
+        <div class="buttonDiv">
+            <button id="2" type="button" class="forwardButton generateCanvas">Jätkan</button>
+        </div>
+    </div>
+
+    <div class="mySlides ">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="stepNumber" align="center">Samm 2/5</div>
+        <div class="actionText" align="center">
+            <p>Kirjuta lahtrisse ettevõtte nimi, kus tunnustust vääriv inimene töötab</p>
+            </p>
+        </div>
+        <div class="contentSection" align="center">
+            <input type="text" class="form-group companyInput borderStyle" maxLength="22" placeholder="Ettevõtte nimi"/>
+            <div class=" inputNote">
+                <p>Maksimum tähemärkide arv on 22</p>
+            </div>
+        </div>
+        <div class="buttonDiv">
+            <button id="3" type="button" class="forwardButton addCompanyName">Jätkan</button>
+        </div>
+    </div>
+
+    <div class="mySlides ">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="stepNumber" align="center">Samm 3/5</div>
+        <div class="actionText" align="center">
+            <p>Kirjuta lahtrisse inimese nimi, keda soovid kuldsüdamega tunnustada</p>
+        </div>
+        <div class="contentSection" align="center">
+            <input type="text" class="form-group nameInput borderStyle" maxLength="24" placeholder="Ees- ja perekonnanimi"/>
+            <div class=" inputNote">
+                <p>Maksimum tähemärkide arv on 24</p>
+            </div>
+        </div>
+        <div class="buttonDiv">
+            <button id="4" type="button" class="addPersonName">Jätkan</button>
+        </div>
+    </div>
+
+    <div class="mySlides ">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="stepNumber" align="center">Samm 4/5</div>
+        <div class="actionText" align="center">
+            <p>Aitäh! Tunnustust näed, kui vajutad nuppu "Genereerin tunnustuse".</p>
+            <p>
+                Osale ka <mark class="textMarker">AASTA KULDSÜDA</mark> tiitli valimises, kirjutades siia lahtrisse,
+                miks tunnustatav on ära teeninud kuldsüdame tiitli ning lisades
+                alumisse lahtrisse enda e-maili.
+            </p>
+        </div>
+        <div class="contentSection textAreaSection" align="center">
+            <textarea rows="4" cols="50" class="form-group titleOf textAreaInput borderStyle" maxLength="200"></textarea>
+            <div class=" inputNote">
+                <p>Maksimum tähemärkide arv on 200</p>
+            </div>
+        </div>
+        <div class="creatorActionText" align="center">
+            <input type="text" class="form-group creatorInput borderStyle" maxLength="40" placeholder="Sinu e-mail"/>
+            <div class=" inputNote">
+                <p>Maksimum tähemärkide arv on 40</p>
+            </div>
+        </div>
+        <div class="generateCheckBoxSection" align="center">
+            <input id="confirmationCheckboxSlide" type="checkbox" class="" />
+            <p>Olen teadlik, et CV.ee kasutab minu e-maili Kuldsüdame kampaania info edastamiseks.</p>
+        </div>
+        <div class="buttonDiv">
+            <button id="5" type="button" class="generatePicture">Genereerin tunnustuse</button>
+        </div>
+    </div>
+
+    <div class="mySlides ">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="stepNumber" align="center">Samm 5/5</div>
+        <div class="actionText" align="center">
+            <p>
+                Üllata nüüd Kuldsüdame saajat ja postita tunnustus
+                <mark class="textMarker">tema</mark> Facebooki seinale.
+            </p>
+        </div>
+        <div class="photoSection finishSection" align="center">
+
+        </div>
+        <div class="facebookTutorialDiv" align="center">
+            <img class="facebookTutImg" src="{{ '/assets/images/imago_jaga_ajajoonel_uus_1.svg'|theme }}"/>
+            <p class="tutorialText">
+                NB! Facebooki postituse akna avamisel vali rippmenüüst
+                "Share on a Friend's Timeline" ning märgi sinna inimese nimi, keda soovid tunnustada.
+
+            </p>
+        </div>
+        <div class="buttonDivShare">
+            <button id="shareToFacebook" type="button" class="shareButton">Tunnustan Facebookis</button>
+            <button id="sendEmailModal" type="button" class="shareButton" data-toggle="modal" data-target=".sendEmailModal">Tunnustan e-mailiga</button>
+        </div>
+    </div>
+
+    <div class="mySlides orderSlide">
+        <div class="slideTitle" align="center">
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <!--
+            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
+            <p class="slideTitleElement companyElement">CV.ee</p>
+            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
+            -->
+        </div>
+        <div class="stepNumber" align="center"></div>
+        <div class="actionText" align="center">
+            <p>CV.ee tänab Sind südamest, et leidsid aega
+                tunnustamiseks!
+            </p>
+        </div>
+        <div class="photoSection" align="center">
+            <img class="imageContainer" src="{{ '/assets/images/1200x628px_imago_uus_loos-02.svg'|theme }}" alt="" />
+        </div>
+
+        <div class="fbShareDiv">
+            <div class="fb-like" data-href="https://www.facebook.com/cvonlineestonia"
+                 data-layout="standard" data-action="like" data-size="large" data-show-faces="true"
+                 data-share="true"></div>
+        </div>
+        <div class="buttonDiv">
+            <button id="generateNew" type="button" class="finishButton">Tunnustan järgmist inimest!</button>
+            <!--<button id="checkJobOffers" type="button" class="finishButton">Vaata tööpakkumisi</button>-->
+        </div>
+        <div class="footerDiv">
+            <a href="https://www.cv.ee/toopakkumised">
+                <img class="imageContainer" src="{{ '/assets/images/FooterImage.jpg'|theme }}" alt="" />
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<br>
+
+<div style="display: none;">
+    <canvas id="templateCanvas"></canvas>
+</div>
+
+<div class="modal fade sendEmailModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Saada e-mail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input id="senderName" name="senderName" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Sinu ees- ja perekonnanimi"/>
+                <input id="senderEmail" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Sinu e-maili aadress"/>
+                <input id="receiverEmail" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Kolleegi e-maili aadress"/>
+                <textarea id="messageBody" class="borderStyle modalTextArea" maxLength="200" placeholder="Kirjuta siia sõnum"></textarea>
+                <div class="checkBoxSection">
+			  <span>
+			    <div>
+				  <input id="confirmationCheckbox" type="checkbox" class="" />
+			    </div>
+				<div>
+				  <p>Olen teadlik, et CV.ee kasutab minu e-maili Kuldsüdame
+					 kampaania info edastamiseks. CV.ee-l puudub õigus jagada
+					 minu ja mu kolleegi e-maili kolmandatele osapooltele.</p>
+			    </div>
+			  </span>
+                </div>
+            </div>
+            <div class="modal-footer modal-footer-block" align="center">
+                <button id="sendToEmail" type="submit" class="modalShareButton">Saada e-mail</button>
+            </div>
+        </div>
+    </div>
+</div>
