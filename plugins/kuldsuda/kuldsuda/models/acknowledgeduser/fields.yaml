@@ -14,9 +14,9 @@ fields:
         label: EMAIL
     picture_type:
         label: PILDI TÜÜP
-    sent:
+    sent_type:
         label: SAADETUD
     acknowledged_name:
         label: TUNNUSTATUD
-    location:
+    picture_location:
         label: PILDI ASUKOHT

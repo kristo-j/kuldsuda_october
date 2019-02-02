@@ -50,7 +50,7 @@ $(document).ready(function(){
     function saveUserAnswer(sentTo, name){
         $.ajax({
             type: 'post',
-            url: './scripts/SaveUserAnswer.php',
+            url: controllerUrl+'saveuseranswer',
             data:{
                 senderName: name,
                 sentTo: sentTo,
@@ -346,7 +346,7 @@ $(document).ready(function(){
 
         $.ajax({
             type: 'POST',
-            url: './scripts/SendEmail.php',
+            url: controllerUrl+'sendemail',
             data:{
                 senderName: senderName,
                 senderEmail: senderEmail,

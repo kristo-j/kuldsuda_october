@@ -2,7 +2,9 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
+use Cms\Classes\Theme;
 use Kuldsuda\Kuldsuda\Models\Acknowledgeduser as User;
+use Mail;
 
 /**
  * Acknowledgeduser Back-end Controller
@@ -49,16 +51,20 @@ class Acknowledgeduser extends Controller
 
     public function sendEmail()
     {
+        $vars = [];
 
+        Mail::send('kuldsuda.kuldsuda::mail.message', $vars, function ($message) {
+            $message->to('kristo.j@hotmail.com');
+            $message->subject('Hinnapakkumise päring - test');
+            //$message->attach($pathToFile, array $options = []);
+        });
     }
 
     public function saveUserAnswer()
     {
-        $acknowledgedUsers = new \Models\Acknowledgedusers();
-        $acknowledgedUsers->email = post('email');
-        $acknowledgedUsers->reason = post('reason');
-        $acknowledgedUsers->picture_type = post('pictureType');
-        $acknowledgedUsers->recognized_name = post('recognizedName');
+        $acknowledgedUsers = User::where('id', 1)->first();
+        $acknowledgedUsers->name = "test";
+        $acknowledgedUsers->sent_type = "test";
         $acknowledgedUsers->save();
     }
 
@@ -70,5 +76,6 @@ class Acknowledgeduser extends Controller
         $acknowledgedUsers->picture_type = post('pictureType');
         $acknowledgedUsers->acknowledged_name = post('recognizedName');
         $acknowledgedUsers->save();
+        return $acknowledgedUsers->id;
     }
 }
