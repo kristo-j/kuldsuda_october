@@ -1,0 +1,24 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: NIMI
+        searchable: true
+    reason:
+        label: PÕHJUS
+        searchable: true
+    email:
+        label: EMAIL
+    picture_type:
+        label: PILDI TÜÜP
+    sent:
+        label: SAADETUD
+    acknowledged_name:
+        label: TUNNUSTATUD
+    location:
+        label: PILDI ASUKOHT

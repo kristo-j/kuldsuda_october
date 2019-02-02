@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Acknowledgeduser
+
+# Model Form Field configuration
+form: $/kuldsuda/kuldsuda/models/acknowledgeduser/fields.yaml
+
+# Model Class name
+modelClass: Kuldsuda\Kuldsuda\Models\Acknowledgeduser
+
+# Default redirect location
+defaultRedirect: kuldsuda/kuldsuda/acknowledgedusers
+
+# Create page
+create:
+    title: Create Acknowledgeduser
+    redirect: kuldsuda/kuldsuda/acknowledgedusers/update/:id
+    redirectClose: kuldsuda/kuldsuda/acknowledgedusers
+
+# Update page
+update:
+    title: Edit Acknowledgeduser
+    redirect: kuldsuda/kuldsuda/acknowledgedusers
+    redirectClose: kuldsuda/kuldsuda/acknowledgedusers
+
+# Preview page
+preview:
+    title: Preview Acknowledgeduser

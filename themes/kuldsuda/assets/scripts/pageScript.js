@@ -7,6 +7,7 @@ $(document).ready(function(){
     var imageName;
     var selectedPicture;
     var lineId;
+    var controllerUrl = "./kuldsuda/kuldsuda/";
 
     function saveImageToServer(dataUrl, id){
         $.ajax({

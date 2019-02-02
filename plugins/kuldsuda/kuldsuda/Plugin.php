@@ -17,7 +17,7 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Kuldsuda',
-            'description' => 'No description provided yet...',
+            'description' => 'Kuldsuda tunnustatud kasutajad',
             'author'      => 'Kuldsuda',
             'icon'        => 'icon-leaf'
         ];
@@ -81,12 +81,10 @@ class Plugin extends PluginBase
      */
     public function registerNavigation()
     {
-        return []; // Remove this line to activate
-
         return [
             'kuldsuda' => [
                 'label'       => 'Kuldsuda',
-                'url'         => Backend::url('kuldsuda/kuldsuda/mycontroller'),
+                'url'         => Backend::url('kuldsuda/kuldsuda/acknowledgedusers'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['kuldsuda.kuldsuda.*'],
                 'order'       => 500,

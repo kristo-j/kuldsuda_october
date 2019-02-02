@@ -139,4 +139,6 @@
   'Cms\\Twig\\PageNode' => 'modules/cms/twig/PageNode.php',
   'Cms\\Twig\\ScriptsNode' => 'modules/cms/twig/ScriptsNode.php',
   'Cms\\Helpers\\File' => 'modules/cms/helpers/File.php',
+  'Kuldsuda\\Kuldsuda\\Controllers\\Acknowledgedusers' => 'plugins/kuldsuda/kuldsuda/controllers/AcknowledgedusersController.php',
+  'Backend\\Behaviors\\FormController' => 'modules/backend/behaviors/FormController.php',
 );

@@ -1,1 +1,4 @@
 1.0.1: First version of Kuldsuda
+1.0.2:
+  - tunnustatud kasutajate loomine
+  - create_acknowledgedusers_table.php

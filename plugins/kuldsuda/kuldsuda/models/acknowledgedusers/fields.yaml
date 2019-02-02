@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    name:
+        label: NIMI
+    reason:
+        label: PÕHJUS
+    email:
+        label: EMAIL
+    picture_type:
+        label: PILDI TÜÜP
+    sent:
+        label: SAADETUD
+    acknowledged_name:
+        label: TUNNUSTATUD
+    location:
+        label: PILDI ASUKOHT
