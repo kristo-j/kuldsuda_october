@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('kuldsuda/kuldsuda/acknowledgedusers') ?>">Acknowledgedusers</a></li>
+        <li><a href="<?= Backend::url('kuldsuda/kuldsuda/acknowledgeduser') ?>">Acknowledgeduser</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -14,6 +14,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('kuldsuda/kuldsuda/acknowledgedusers') ?>" class="btn btn-default">Return to acknowledgedusers list</a></p>
+    <p><a href="<?= Backend::url('kuldsuda/kuldsuda/acknowledgeduser') ?>" class="btn btn-default">Return to acknowledgeduser list</a></p>
 
 <?php endif ?>

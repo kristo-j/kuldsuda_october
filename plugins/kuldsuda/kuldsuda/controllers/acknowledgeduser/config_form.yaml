@@ -12,19 +12,19 @@ form: $/kuldsuda/kuldsuda/models/acknowledgeduser/fields.yaml
 modelClass: Kuldsuda\Kuldsuda\Models\Acknowledgeduser
 
 # Default redirect location
-defaultRedirect: kuldsuda/kuldsuda/acknowledgedusers
+defaultRedirect: kuldsuda/kuldsuda/acknowledgeduser
 
 # Create page
 create:
     title: Create Acknowledgeduser
-    redirect: kuldsuda/kuldsuda/acknowledgedusers/update/:id
-    redirectClose: kuldsuda/kuldsuda/acknowledgedusers
+    redirect: kuldsuda/kuldsuda/acknowledgeduser/update/:id
+    redirectClose: kuldsuda/kuldsuda/acknowledgeduser
 
 # Update page
 update:
     title: Edit Acknowledgeduser
-    redirect: kuldsuda/kuldsuda/acknowledgedusers
-    redirectClose: kuldsuda/kuldsuda/acknowledgedusers
+    redirect: kuldsuda/kuldsuda/acknowledgeduser
+    redirectClose: kuldsuda/kuldsuda/acknowledgeduser
 
 # Preview page
 preview:

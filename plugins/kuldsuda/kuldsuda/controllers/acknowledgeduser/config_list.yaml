@@ -12,7 +12,7 @@ modelClass: Kuldsuda\Kuldsuda\Models\Acknowledgeduser
 title: Manage Acknowledgedusers
 
 # Link URL for each record
-recordUrl: kuldsuda/kuldsuda/acknowledgedusers/update/:id
+recordUrl: kuldsuda/kuldsuda/acknowledgeduser/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

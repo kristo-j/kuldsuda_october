@@ -2,12 +2,12 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use Kuldsuda\Kuldsuda\Models\Acknowledgedusers;
+use Kuldsuda\Kuldsuda\Models\Acknowledgeduser as User;
 
 /**
- * Acknowledgedusers Back-end Controller
+ * Acknowledgeduser Back-end Controller
  */
-class AcknowledgedusersController extends Controller
+class Acknowledgeduser extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -21,7 +21,7 @@ class AcknowledgedusersController extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Kuldsuda.Kuldsuda', 'kuldsuda', 'acknowledgedusers');
+        BackendMenu::setContext('Kuldsuda.Kuldsuda', 'kuldsuda', 'acknowledgeduser');
     }
 
     public function testController()
@@ -32,23 +32,19 @@ class AcknowledgedusersController extends Controller
     public function saveImage()
     {
         define('UPLOAD_DIR', './/themes//kuldsuda//assets//images//genereeritud_tunnustused//');
-
-        $img = post('imageData');
+        $img = post('imgBase');
         $img = str_replace('data:image/png;base64,', '', $img);
         $img = str_replace(' ', '+', $img);
         $data = base64_decode($img);
         $fileid = uniqid();
         $filename = $fileid . '.png';
         $file = UPLOAD_DIR . $filename;
-
         while(file_exists($file)){
             $filename = uniqid() . '.png';
             $file = UPLOAD_DIR . $filename;
         }
-
         $success = file_put_contents($file, $data);
-
-        return $file;
+        return $filename;
     }
 
     public function sendEmail()
@@ -58,7 +54,21 @@ class AcknowledgedusersController extends Controller
 
     public function saveUserAnswer()
     {
-        $acknowledgedUsers = new Acknowledgedusers();
+        $acknowledgedUsers = new \Models\Acknowledgedusers();
+        $acknowledgedUsers->email = post('email');
+        $acknowledgedUsers->reason = post('reason');
+        $acknowledgedUsers->picture_type = post('pictureType');
+        $acknowledgedUsers->recognized_name = post('recognizedName');
+        $acknowledgedUsers->save();
+    }
 
+    public function saveRecognition()
+    {
+        $acknowledgedUsers = new User();
+        $acknowledgedUsers->email = post('email');
+        $acknowledgedUsers->reason = post('reason');
+        $acknowledgedUsers->picture_type = post('pictureType');
+        $acknowledgedUsers->acknowledged_name = post('recognizedName');
+        $acknowledgedUsers->save();
     }
 }

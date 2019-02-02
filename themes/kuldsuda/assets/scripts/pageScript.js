@@ -12,7 +12,7 @@ $(document).ready(function(){
     function saveImageToServer(dataUrl, id){
         $.ajax({
             type: 'POST',
-            url: './scripts/SaveImage.php',
+            url: controllerUrl+'saveimage',
             data: {
                 imgBase: dataUrl
             },
@@ -20,7 +20,7 @@ $(document).ready(function(){
                 imageName = data;
 
                 $('.finishSection').append(
-                    '<img id="generatedPicture" class="inheritDimension" align="center" src="./tunnustused/'+data+'">'
+                    '<img id="generatedPicture" class="inheritDimension" align="center" src="./themes/kuldsuda/assets/images/genereeritud_tunnustused/'+data+'">'
                 );
             }
         }).done(function(){
@@ -31,12 +31,12 @@ $(document).ready(function(){
     function saveRecognition() {
         $.ajax({
             type: 'POST',
-            url: './scripts/SaveRecognition.php',
+            url: controllerUrl+'saverecognition',
             data: {
                 email: $('.creatorInput').val(),
                 reason: $('.textAreaInput').val(),
                 pictureType: selectedPicture,
-                recognizedname: $('.nameInput').val()
+                recognizedName: $('.nameInput').val()
             },
             success: function(data){
                 lineId = data;
@@ -150,9 +150,19 @@ $(document).ready(function(){
 
             ctx.canvas.width = 1200;
             ctx.canvas.height = 630;
-
             var imgSrc = selectedImage[0]['src'];
-            background.src = imgSrc.replace('.svg', '.png');
+
+            if (imgSrc.includes('tunnustused_elegantne')) {
+                imgSrc = imgSrc.replace('tunnustused_elegantne', 'tunnustused_elegantne_png');
+                imgSrc = imgSrc.replace('.svg', '.png');
+            }
+
+            if (imgSrc.includes('tunnustused_lobus')) {
+                imgSrc = imgSrc.replace('tunnustused_lobus', 'tunnustused_lobus_png');
+                imgSrc = imgSrc.replace('.svg', '.png');
+            }
+
+            background.src = imgSrc;
 
             background.onload = function(){
                 ctx.drawImage(background,0,0);
@@ -180,7 +190,6 @@ $(document).ready(function(){
         };
 
         forwardSlide(parseInt($(this).attr('id')));
-
     });
 
     $('.example-control-prev').on('click', function(){

@@ -3,9 +3,9 @@
 use Model;
 
 /**
- * Acknowledgedusers Model
+ * Acknowledgeduser Model
  */
-class Acknowledgedusers extends Model
+class Acknowledgeduser extends Model
 {
     /**
      * @var string The database table used by the model.

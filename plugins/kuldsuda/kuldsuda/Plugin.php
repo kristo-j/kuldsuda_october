@@ -84,7 +84,7 @@ class Plugin extends PluginBase
         return [
             'kuldsuda' => [
                 'label'       => 'Kuldsuda',
-                'url'         => Backend::url('kuldsuda/kuldsuda/acknowledgedusers'),
+                'url'         => Backend::url('kuldsuda/kuldsuda/acknowledgeduser'),
                 'icon'        => 'icon-leaf',
                 'permissions' => ['kuldsuda.kuldsuda.*'],
                 'order'       => 500,
