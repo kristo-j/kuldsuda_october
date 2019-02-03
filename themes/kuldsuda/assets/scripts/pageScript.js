@@ -50,12 +50,13 @@ $(document).ready(function(){
         });
     }
 
-    function saveUserAnswer(sentTo, name){
+    function saveUserAnswer(sentTo, name, email){
         $.ajax({
             type: 'post',
             url: controllerUrl+'saveuseranswer',
             data:{
                 senderName: name,
+                senderEmail: email,
                 sentTo: sentTo,
                 id: lineId
             },
@@ -360,7 +361,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 currentSlide(7);
-                saveUserAnswer("email", senderName);
+                saveUserAnswer("email", senderName, senderEmail);
                 $('.sendEmailModal').modal('toggle');
             },
             failure: function(data){
@@ -401,12 +402,12 @@ $(document).ready(function(){
     });
 
     $('#shareToFacebook').on('click', function(){
-        pictureLocation = "https://www.kuldsuda.ee/tunnustused/"+languageId+"/"+imageName;
+        tunnustusLocation = "https://www.kuldsuda.ee/tunnustused/"+languageId+"/"+imageName;
+        imageLocation = "https://www.kuldsuda.ee/themes/assets/images/genereeritud_tunnustused/"+imageName,
 
         FB.ui({
             method: 'share',
-            picture: "https://www.kuldsuda.ee/themes/assets/images/genereeritud_tunnustused/"+imageName,
-            href: pictureLocation,
+            href: imageLocation,
             title: 'Kuldsüda',
         }, function(response){
             if (response && !response.error_message) {
@@ -455,7 +456,6 @@ $(document).ready(function(){
             method: 'share',
             href: pictureLocation,
             title: 'Kuldsüda',
-            to: '',
         }, function(response){
             if (response && !response.error_message) {
                 saveUserAnswer();

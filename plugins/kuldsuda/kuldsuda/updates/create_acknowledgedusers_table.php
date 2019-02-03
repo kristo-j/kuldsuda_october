@@ -18,6 +18,7 @@ class CreateAcknowledgedusersTable extends Migration
             $table->string('sent_type')->nullable();
             $table->string('acknowledged_name')->nullable();
             $table->string('picture_location')->nullable();
+            $table->string('sender_email')->nullable();
             $table->timestamps();
         });
     }

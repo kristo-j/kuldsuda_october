@@ -69,6 +69,7 @@ class Acknowledgeduser extends Controller
 
         Mail::send('kuldsuda.kuldsuda::mail.message', $vars, function ($message) {
             $message->to(post('receiverEmail'));
+            $message->from(post('senderEmail'), post('senderName'));
             $message->subject('Oled tunnustatud');
             $message->attach('.//themes//kuldsuda//assets//images//genereeritud_tunnustused//'.post('imageSrc'));
         });
@@ -77,7 +78,8 @@ class Acknowledgeduser extends Controller
     public function saveUserAnswer()
     {
         $acknowledgedUsers = User::where('id', post('id'))->first();
-        $acknowledgedUsers->name = post('name');
+        $acknowledgedUsers->name = post('senderName');
+        $acknowledgedUsers->sender_email = post('senderEmail');
         $acknowledgedUsers->sent_type = post('sentTo');
         $acknowledgedUsers->save();
     }

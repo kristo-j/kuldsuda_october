@@ -169,7 +169,7 @@ img {vertical-align: middle;}
 }
 
 .orderText{
-    font-weight: 600px;
+    font-weight: 600;
     color: black;
 }
 
@@ -601,8 +601,7 @@ span.carousel-control-next-icon{
 }
 
 .modalShareButton{
-    min-width: 210px;
-    width: 100%;
+    min-width: 240px;
     min-height: 70px;
     height: auto;
     background-color: #244999;
@@ -747,7 +746,7 @@ input{
 
 .orderModalTitle{
     font-weight: 600;
-    font-size: 18;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 
@@ -828,7 +827,7 @@ input{
         font-size: 15px;
         font-weight: 500;
         padding-left: 10%;
-        padding-right; 10%;
+        padding-right: 10%;
     }
 
     .form-group::placeholder{
@@ -909,7 +908,7 @@ input{
         font-size: 17px;
         font-weight: 500;
         padding-left: 10%;
-        padding-right; 10%;
+        padding-right: 10%;
     }
 
     .form-group::placeholder{
