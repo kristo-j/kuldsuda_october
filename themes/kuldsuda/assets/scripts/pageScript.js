@@ -403,7 +403,7 @@ $(document).ready(function(){
 
     $('#shareToFacebook').on('click', function(){
         tunnustusLocation = "https://www.kuldsuda.ee/tunnustused/"+languageId+"/"+imageName;
-        imageLocation = "https://www.kuldsuda.ee/themes/assets/images/genereeritud_tunnustused/"+imageName,
+        imageLocation = "https://www.kuldsuda.ee/themes/kuldsuda/assets/images/genereeritud_tunnustused/"+imageName;
 
         FB.ui({
             method: 'share',
