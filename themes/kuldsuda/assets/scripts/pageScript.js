@@ -405,6 +405,7 @@ $(document).ready(function(){
 
         FB.ui({
             method: 'share',
+            picture: "https://www.kuldsuda.ee/themes/assets/images/genereeritud_tunnustused/"+imageName,
             href: pictureLocation,
             title: 'Kuldsüda',
         }, function(response){

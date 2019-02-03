@@ -76,7 +76,7 @@ class Acknowledgeduser extends Controller
 
     public function saveUserAnswer()
     {
-        $acknowledgedUsers = User::where('id', post('lineId'))->first();
+        $acknowledgedUsers = User::where('id', post('id'))->first();
         $acknowledgedUsers->name = post('name');
         $acknowledgedUsers->sent_type = post('sentTo');
         $acknowledgedUsers->save();
