@@ -70,7 +70,7 @@ class Acknowledgeduser extends Controller
         Mail::send('kuldsuda.kuldsuda::mail.message', $vars, function ($message) {
             $message->to(post('receiverEmail'));
             $message->subject('Oled tunnustatud');
-            $message->attach(post('imageSrc'));
+            $message->attach('.//themes//kuldsuda//assets//images//genereeritud_tunnustused//'.post('imageSrc'));
         });
     }
 
