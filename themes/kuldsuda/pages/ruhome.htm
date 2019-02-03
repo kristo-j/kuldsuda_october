@@ -35,29 +35,28 @@ function onStart() {
     $this['count_lobus'] = $count_lobus;
 }
 ==
+<div id="languageElem" style="display:none;" value="ru"></div>
 <div class="slideshow-container col-12">
 
     <div class="mySlides ">
         <div class="slideTitle" align="center">
-            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
+            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01_RU.svg'|theme }}" alt="Logo" />
             <!--
             <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
             <p class="slideTitleElement companyElement">CV.ee</p>
             <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
             -->
         </div>
-        <div class="actionLine" align="center"><p>Tunnusta head kolleegi või märgatud eeskuju!</p></div>
+        <div class="actionLine" align="center"><p>Награди коллегу или образец подражания!</p></div>
         <div class="informationLine" align="center">
             <div>
                 <p>
-                    Oscareid jagatakse kord aastas, ka TOP tööandjad on valitud,
-                    aga kuldsüdameid saab jagada ka siis, kui kiitmise tunne peale tuleb.
-                    <mark class="textMarker">Võta 3 minutit,</mark> et tunnustada silmapaistvat kolleegi või kedagi tõeliselt
-                    eeskujulikku töötegijat kuldsüdamega. Vali välja sobiv tiitel ning
-                    edasta see tema <mark class="textMarker">Facebooki</mark> seinale või e-mailile.
+                    Оскары вручаются раз в год, лучший работодатели тоже награждены, а золотое сердце можно вручить в
+                    любой момент, когда захочется. <mark class="textMarker">Найди 3 минуты</mark> и награди коллегу золотым сердцем! Выбери подходящий
+                    титул и отправь коллеге на электронную почту или на стену в <mark class="textMarker">Facebook’е</mark>.
                 </p>
                 <p class="examplesText">
-                    Vaata erinevaid näidiseid
+                    Посмотри разные примеры
                 </p>
             </div>
         </div>
@@ -66,17 +65,7 @@ function onStart() {
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_1c.png'|theme }}" alt="picture" class="img-responsive"/>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_2c.png'|theme }}" alt="picture" class="img-responsive"/>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_3c.png'|theme }}" alt="picture" class="img-responsive"/>
+                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_1_RU.png'|theme }}" alt="picture" class="img-responsive"/>
                         </div>
                     </div>
                 </div>
@@ -91,7 +80,7 @@ function onStart() {
             </div>
         </div>
         <div class="photoSection compSection" align="center">
-            <img class="imageContainer" src="{{ '/assests/images/1200x628px_imago_uus_loos-01.svg'|theme }}" alt="" />
+            <img class="imageContainer" src="{{ '/assests/images/1200x628px_imago_uus_loos_RU-01.svg'|theme }}" alt="" />
         </div>
         <div class="buttonDiv">
             <button id="1" type="button" class="forwardButton">Alustan</button>
@@ -107,28 +96,28 @@ function onStart() {
             <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
             -->
         </div>
-        <div class="stepNumber" align="center">Samm 1/5</div>
+        <div class="stepNumber" align="center">Шаг 1/5</div>
         <div class="actionText" align="center">
-            <p>Vali sobiv kuldsüda, vajutades noolt paremale või vasakule</p>
+            <p>Выбери подходящее сердце, нажав на стрелку вправо или влево.</p>
         </div>
 
         <div class="templateSection" align="center">
             <div id="carouselSection" class="carousel slide carouselContent carouselSectionFun" data-ride="carousel" data-interval="false" style="display: none;">
                 <div class="carousel-inner carousel-fun">
                     {% for i in 1..count_lobus-1 %}
-                    {% if i == 1 %}
-                    <div class="carousel-item active ">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="carousel-item">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
-                        </div>
-                    </div>
-                    {% endif %}
+                        {% if i == 1 %}
+                            <div class="carousel-item active ">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
                 <p class="carousel-control-prev fun-control-prev" role="button" data-slide="prev">
@@ -144,19 +133,19 @@ function onStart() {
             <div id="carouselSection" class="carousel slide carouselContent carouselSectionElegant" data-ride="carousel" data-interval="false" style="display: none;">
                 <div class="carousel-inner carousel-elegant">
                     {% for i in 1..count_elegant-1 %}
-                    {% if i == 1 %}
-                    <div class="carousel-item active ">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="carousel-item">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
-                        </div>
-                    </div>
-                    {% endif %}
+                        {% if i == 1 %}
+                            <div class="carousel-item active ">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <div class="imageContainer">
+                                    <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
+                                </div>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
                 <p class="carousel-control-prev elegant-control-prev" role="button" data-slide="prev">
@@ -171,14 +160,14 @@ function onStart() {
 
         </div>
         <div class="buttonDivTemplate" align="center">
-            <p>Vajuta allolevale nupule, et valida kas lõbus või elegantne disain</p>
+            <p>Нажми на одну из кнопок, чтоб выбрать элегантный или веселый дизайн</p>
             <div>
-                <button id="elegantDesign" type="button" class="templateSelection selected">Elegantne disain</button>
-                <button id="funDesign" type="button" class="templateSelection">Lõbus disain</button>
+                <button id="elegantDesign" type="button" class="templateSelection selected">Элегантный дизайн</button>
+                <button id="funDesign" type="button" class="templateSelection">Веселый дизайн</button>
             </div>
         </div>
         <div class="buttonDiv">
-            <button id="2" type="button" class="forwardButton generateCanvas">Jätkan</button>
+            <button id="2" type="button" class="forwardButton generateCanvas">Продолжить</button>
         </div>
     </div>
 
@@ -191,19 +180,19 @@ function onStart() {
             <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
             -->
         </div>
-        <div class="stepNumber" align="center">Samm 2/5</div>
+        <div class="stepNumber" align="center">Шаг 2/5</div>
         <div class="actionText" align="center">
-            <p>Kirjuta lahtrisse ettevõtte nimi, kus tunnustust vääriv inimene töötab</p>
+            <p>Напиши название предприятия, где работает человек, которого ты хочешь наградить</p>
             </p>
         </div>
         <div class="contentSection" align="center">
-            <input type="text" class="form-group companyInput borderStyle" maxLength="22" placeholder="Ettevõtte nimi"/>
+            <input type="text" class="form-group companyInput borderStyle" maxLength="22" placeholder="Название предприятия"/>
             <div class=" inputNote">
-                <p>Maksimum tähemärkide arv on 22</p>
+                <p>Максимальное кол-во знаков – 22</p>
             </div>
         </div>
         <div class="buttonDiv">
-            <button id="3" type="button" class="forwardButton addCompanyName">Jätkan</button>
+            <button id="3" type="button" class="forwardButton addCompanyName">Продолжить</button>
         </div>
     </div>
 
@@ -216,18 +205,18 @@ function onStart() {
             <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
             -->
         </div>
-        <div class="stepNumber" align="center">Samm 3/5</div>
+        <div class="stepNumber" align="center">Шаг 3/5</div>
         <div class="actionText" align="center">
-            <p>Kirjuta lahtrisse inimese nimi, keda soovid kuldsüdamega tunnustada</p>
+            <p>Напиши имя человека, которого хочешь наградить золотым сердцем</p>
         </div>
         <div class="contentSection" align="center">
-            <input type="text" class="form-group nameInput borderStyle" maxLength="24" placeholder="Ees- ja perekonnanimi"/>
+            <input type="text" class="form-group nameInput borderStyle" maxLength="24" placeholder="Имя и фамилия"/>
             <div class=" inputNote">
-                <p>Maksimum tähemärkide arv on 24</p>
+                <p>Максимальное кол-во знаков – 24</p>
             </div>
         </div>
         <div class="buttonDiv">
-            <button id="4" type="button" class="addPersonName">Jätkan</button>
+            <button id="4" type="button" class="addPersonName">Продолжить</button>
         </div>
     </div>
 
@@ -240,33 +229,32 @@ function onStart() {
             <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
             -->
         </div>
-        <div class="stepNumber" align="center">Samm 4/5</div>
+        <div class="stepNumber" align="center">Шаг 4/5</div>
         <div class="actionText" align="center">
-            <p>Aitäh! Tunnustust näed, kui vajutad nuppu "Genereerin tunnustuse".</p>
+            <p>Спасибо! Готовую награду увидишь, нажав на кнопку “Сгенерировать награду</p>
             <p>
-                Osale ka <mark class="textMarker">AASTA KULDSÜDA</mark> tiitli valimises, kirjutades siia lahtrisse,
-                miks tunnustatav on ära teeninud kuldsüdame tiitli ning lisades
-                alumisse lahtrisse enda e-maili.
+                Участвуй в выборах <mark class="textMarker">ЗОЛОТОГО СЕРДЦА ГОДА</mark>. Для этого тебе нужно написать в эту графу,
+                почему награждённый достоин этого титла, а также добавить свою электронную почту в нижнюю графу.
             </p>
         </div>
         <div class="contentSection textAreaSection" align="center">
             <textarea rows="4" cols="50" class="form-group titleOf textAreaInput borderStyle" maxLength="200"></textarea>
             <div class=" inputNote">
-                <p>Maksimum tähemärkide arv on 200</p>
+                <p>Максимальное кол-во знаков – 200</p>
             </div>
         </div>
         <div class="creatorActionText" align="center">
-            <input type="text" class="form-group creatorInput borderStyle" maxLength="40" placeholder="Sinu e-mail"/>
+            <input type="text" class="form-group creatorInput borderStyle" maxLength="40" placeholder="Твоя электронная почта"/>
             <div class=" inputNote">
-                <p>Maksimum tähemärkide arv on 40</p>
+                <p>Максимальное кол-во знаков – 40</p>
             </div>
         </div>
         <div class="generateCheckBoxSection" align="center">
             <input id="confirmationCheckboxSlide" type="checkbox" class="" />
-            <p>Olen teadlik, et CV.ee kasutab minu e-maili Kuldsüdame kampaania info edastamiseks.</p>
+            <p>Я ознакомлен с тем, что CV.ee использует мою электронную почту для предоставления информации связанной с компанией “Золотое сердце”.</p>
         </div>
         <div class="buttonDiv">
-            <button id="5" type="button" class="generatePicture">Genereerin tunnustuse</button>
+            <button id="5" type="button" class="generatePicture">Сгенерировать призвание</button>
         </div>
     </div>
 
@@ -279,11 +267,10 @@ function onStart() {
             <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
             -->
         </div>
-        <div class="stepNumber" align="center">Samm 5/5</div>
+        <div class="stepNumber" align="center">Шаг 5/5</div>
         <div class="actionText" align="center">
             <p>
-                Üllata nüüd Kuldsüdame saajat ja postita tunnustus
-                <mark class="textMarker">tema</mark> Facebooki seinale.
+                Теперь удиви получателя Золотого сердца и сделай публикацию на его стене в Facebook'е.
             </p>
         </div>
         <div class="photoSection finishSection" align="center">
@@ -292,14 +279,14 @@ function onStart() {
         <div class="facebookTutorialDiv" align="center">
             <img class="facebookTutImg" src="{{ '/assets/images/imago_jaga_ajajoonel_uus_1.svg'|theme }}"/>
             <p class="tutorialText">
-                NB! Facebooki postituse akna avamisel vali rippmenüüst
-                "Share on a Friend's Timeline" ning märgi sinna inimese nimi, keda soovid tunnustada.
-
+                NB! Когда вы открываете окно для публикации в Facebook,
+                выберите «Поделитесь в хронике друга» в раскрывающемся
+                меню и отметьте имя человека, которого хотите наградить.
             </p>
         </div>
         <div class="buttonDivShare">
-            <button id="shareToFacebook" type="button" class="shareButton">Tunnustan Facebookis</button>
-            <button id="sendEmailModal" type="button" class="shareButton" data-toggle="modal" data-target=".sendEmailModal">Tunnustan e-mailiga</button>
+            <button id="shareToFacebook" type="button" class="shareButton">Наградить в Facebook</button>
+            <button id="sendEmailModal" type="button" class="shareButton" data-toggle="modal" data-target=".sendEmailModal">Наградить по почте</button>
         </div>
     </div>
 
@@ -314,8 +301,7 @@ function onStart() {
         </div>
         <div class="stepNumber" align="center"></div>
         <div class="actionText" align="center">
-            <p>CV.ee tänab Sind südamest, et leidsid aega
-                tunnustamiseks!
+            <p>CV.ee от всего сердца благодарит тебя за то, что нашел время для награждения!
             </p>
         </div>
         <div class="photoSection" align="center">
@@ -328,7 +314,7 @@ function onStart() {
                  data-share="true"></div>
         </div>
         <div class="buttonDiv">
-            <button id="generateNew" type="button" class="finishButton">Tunnustan järgmist inimest!</button>
+            <button id="generateNew" type="button" class="finishButton">Наградить следующего человека!</button>
             <!--<button id="checkJobOffers" type="button" class="finishButton">Vaata tööpakkumisi</button>-->
         </div>
         <div class="footerDiv">
@@ -350,31 +336,31 @@ function onStart() {
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="">Saada e-mail</h5>
+                <h5 class="modal-title" id="">Отправить письмо</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <input id="senderName" name="senderName" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Sinu ees- ja perekonnanimi"/>
-                <input id="senderEmail" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Sinu e-maili aadress"/>
-                <input id="receiverEmail" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Kolleegi e-maili aadress"/>
-                <textarea id="messageBody" class="borderStyle modalTextArea" maxLength="200" placeholder="Kirjuta siia sõnum"></textarea>
+                <input id="senderName" name="senderName" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Твои имя и фамилия"/>
+                <input id="senderEmail" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Твой электронный адрес"/>
+                <input id="receiverEmail" type="text" class="borderStyle modalInput" maxLength="40" placeholder="Электронный адрес коллеги"/>
+                <textarea id="messageBody" class="borderStyle modalTextArea" maxLength="200" placeholder="Напиши сюда письмо"></textarea>
                 <div class="checkBoxSection">
 			  <span>
 			    <div>
 				  <input id="confirmationCheckbox" type="checkbox" class="" />
 			    </div>
 				<div>
-				  <p>Olen teadlik, et CV.ee kasutab minu e-maili Kuldsüdame
-					 kampaania info edastamiseks. CV.ee-l puudub õigus jagada
-					 minu ja mu kolleegi e-maili kolmandatele osapooltele.</p>
+				  <p>Я ознакомлен с тем, что CV.ee использует мою электронную
+				     почту для предоставления информации связанной с компанией “Золотое сердце”.
+					 У CV.ee отсутствует право отправлять мои данные и данные коллеги третьим лицам.</p>
 			    </div>
 			  </span>
                 </div>
             </div>
             <div class="modal-footer modal-footer-block" align="center">
-                <button id="sendToEmail" type="submit" class="modalShareButton">Saada e-mail</button>
+                <button id="sendToEmail" type="submit" class="modalShareButton">Отправить письмо</button>
             </div>
         </div>
     </div>

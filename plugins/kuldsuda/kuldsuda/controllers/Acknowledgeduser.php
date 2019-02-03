@@ -46,25 +46,39 @@ class Acknowledgeduser extends Controller
             $file = UPLOAD_DIR . $filename;
         }
         $success = file_put_contents($file, $data);
-        return $filename;
+
+        $this->bindPictureToUser($file, post('lineId'));
+
+        echo $filename;
+    }
+
+    private function bindPictureToUser($pictureLocation, $lineId)
+    {
+        $acknowledgedUsers = User::where('id', $lineId)->first();
+        $acknowledgedUsers->picture_location = $pictureLocation;
+        $acknowledgedUsers->save();
     }
 
     public function sendEmail()
     {
-        $vars = [];
+        $vars = ['senderEmail' => post('senderEmail'),
+                 'receiverEmail' => post('receiverEmail'),
+                 'imageSrc' => post('imageSrc'),
+                 'messageBody' => post('messageBody'),
+                 'senderName' => post('senderName')];
 
         Mail::send('kuldsuda.kuldsuda::mail.message', $vars, function ($message) {
-            $message->to('kristo.j@hotmail.com');
-            $message->subject('Hinnapakkumise päring - test');
-            //$message->attach($pathToFile, array $options = []);
+            $message->to(post('receiverEmail'));
+            $message->subject('Oled tunnustatud');
+            $message->attach(post('imageSrc'));
         });
     }
 
     public function saveUserAnswer()
     {
-        $acknowledgedUsers = User::where('id', 1)->first();
-        $acknowledgedUsers->name = "test";
-        $acknowledgedUsers->sent_type = "test";
+        $acknowledgedUsers = User::where('id', post('lineId'))->first();
+        $acknowledgedUsers->name = post('name');
+        $acknowledgedUsers->sent_type = post('sentTo');
         $acknowledgedUsers->save();
     }
 
@@ -76,6 +90,6 @@ class Acknowledgeduser extends Controller
         $acknowledgedUsers->picture_type = post('pictureType');
         $acknowledgedUsers->acknowledged_name = post('recognizedName');
         $acknowledgedUsers->save();
-        return $acknowledgedUsers->id;
+        echo $acknowledgedUsers->id;
     }
 }

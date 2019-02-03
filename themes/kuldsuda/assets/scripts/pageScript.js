@@ -7,14 +7,16 @@ $(document).ready(function(){
     var imageName;
     var selectedPicture;
     var lineId;
+    var languageId = $('#languageElem').attr('value');
     var controllerUrl = "./kuldsuda/kuldsuda/";
 
-    function saveImageToServer(dataUrl, id){
+    function saveImageToServer(dataUrl, lineId){
         $.ajax({
             type: 'POST',
             url: controllerUrl+'saveimage',
             data: {
-                imgBase: dataUrl
+                imgBase: dataUrl,
+                lineId: lineId
             },
             success: function(data){
                 imageName = data;
@@ -24,7 +26,7 @@ $(document).ready(function(){
                 );
             }
         }).done(function(){
-            currentSlide(id+1);
+            //currentSlide(id+1);
         });
     }
 
@@ -32,6 +34,7 @@ $(document).ready(function(){
         $.ajax({
             type: 'POST',
             url: controllerUrl+'saverecognition',
+            async: false,
             data: {
                 email: $('.creatorInput').val(),
                 reason: $('.textAreaInput').val(),
@@ -141,8 +144,6 @@ $(document).ready(function(){
         image.src = selectedImage[0]['src'];
         selectedPicture = selectedImage[0]['name'];
 
-        saveRecognition();
-
         image.onload = function(){
 
             //ctx.canvas.width = this.width;
@@ -164,6 +165,8 @@ $(document).ready(function(){
 
             background.src = imgSrc;
 
+            saveRecognition();
+
             background.onload = function(){
                 ctx.drawImage(background,0,0);
 
@@ -184,7 +187,7 @@ $(document).ready(function(){
                         break;
                 }
 
-                saveImageToServer(canvas.toDataURL(), id);
+                saveImageToServer(canvas.toDataURL(), lineId);
             }
 
         };
@@ -398,11 +401,7 @@ $(document).ready(function(){
     });
 
     $('#shareToFacebook').on('click', function(){
-        var pictureLocation = $('#generatedPicture').attr('src');
-        pictureLocation = pictureLocation.replace('tunnustused', 'tunnustused_land');
-        pictureLocation = pictureLocation.replace('.png', '.html');
-        pictureLocation = pictureLocation.replace('/./', '/');
-        pictureLocation = "https://www.kuldsuda.ee/"+pictureLocation;
+        pictureLocation = "https://www.kuldsuda.ee/tunnustused/"+languageId+"/"+imageName;
 
         FB.ui({
             method: 'share',

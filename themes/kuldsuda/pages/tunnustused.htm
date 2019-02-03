@@ -1,0 +1,41 @@
+title = "Tunnustused"
+url = "/tunnustused/:lang/:tunnustus"
+is_hidden = 0
+==
+function onStart()
+{
+    $this['tunnustus'] = $this->param('tunnustus');
+    $this['tunnustusLocation'] = "/assets/images/genereeritud_tunnustused/".$this->param('tunnustus');
+    $this['lang'] = $this->param('lang');
+}
+==
+<!doctype HTML>
+<html>
+    <head>
+        <link rel='stylesheet' href="{{ '/assets/styles/style.css' | theme }}" type='text/css'>
+        <link rel='stylesheet' href="{{ '/assets/scripts/bootstrap/css/bootstrap.min.css' | theme }}" type='text/css'>
+
+        <meta property='og:title'              content='Kuldsüda' />
+        <meta property='og:description'        content='Tunnusta head kolleegi või märgatud eeskuju!' />
+        <meta property='og:image' 	   		   content=".{{ tunnustusLocation }}" />
+        <meta property='og:image:width' 	   content='1200' />
+        <meta property='og:image:height' 	   content='630' />
+
+        <title>Tunnustatud kolleeg</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta charset='UTF-8'>
+        <link rel='shortcut icon' type='image/x-icon' href='./photos/Fav-01.png' />
+
+        <script>
+            function changeUrl() {
+                window.location.href='https://www.kuldsuda.ee';
+            }
+        </script>
+    </head>
+    <body>
+        <div align="center">
+            <img class="col-8" src="{{ tunnustusLocation|theme }}" />
+            <button onclick='changeUrl()' id='button' class='forwardButton' align='center'>Soovin ka kuldsüdamega tunnustada</button>
+        </div>
+    </body>
+</html>
