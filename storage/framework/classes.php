@@ -163,4 +163,7 @@
   'Kuldsuda\\Kuldsuda\\Controllers\\AcknowledgedusersController' => 'plugins/kuldsuda/kuldsuda/controllers/AcknowledgedusersController.php',
   'Kuldsuda\\Kuldsuda\\Models\\Acknowledgeduser' => 'plugins/kuldsuda/kuldsuda/models/Acknowledgeduser.php',
   'Kuldsuda\\Kuldsuda\\Controllers\\Acknowledgeduser' => 'plugins/kuldsuda/kuldsuda/controllers/Acknowledgeduser.php',
+  'System\\Twig\\MailPartialTokenParser' => 'modules/system/twig/MailPartialTokenParser.php',
+  'System\\Models\\MailBrandSetting' => 'modules/system/models/MailBrandSetting.php',
+  'System\\Twig\\MailPartialNode' => 'modules/system/twig/MailPartialNode.php',
 );
