@@ -20,3 +20,5 @@ fields:
         label: TUNNUSTATUD
     picture_location:
         label: PILDI ASUKOHT
+    language:
+        label: KEEL

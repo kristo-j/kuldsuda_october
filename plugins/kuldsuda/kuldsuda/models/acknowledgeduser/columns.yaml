@@ -22,3 +22,4 @@ columns:
         label: TUNNUSTATUD
     picture_location:
         label: PILDI ASUKOHT
+    language: KEEL

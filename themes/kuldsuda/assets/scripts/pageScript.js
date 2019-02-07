@@ -10,12 +10,23 @@ $(document).ready(function(){
     var languageId = $('#languageElem').attr('value');
     var controllerUrl = "./kuldsuda/kuldsuda/";
 
+    /*
+    var $.notify('E-maili väli peab olema täidetud.');
+    $.notify("Midagi läks valesti!");
+    $.notify('Teie e-mail ei vasta e-maili nõuetele.');
+    $.notify('Kinnitage, et olete tingimustega tutvunud.');
+    $.notify('Kolleegi e-mail ei vasta e-maili nõuetele.');
+    $.notify('Kõik väljad peavad täidetud olema.');
+    $.notify('E-maili saatmisel tekkis tõrge!');
+    */
+
     function saveImageToServer(dataUrl, lineId){
         $.ajax({
             type: 'POST',
             url: controllerUrl+'saveimage',
             data: {
                 imgBase: dataUrl,
+                lang: languageId,
                 lineId: lineId
             },
             success: function(data){
@@ -39,7 +50,8 @@ $(document).ready(function(){
                 email: $('.creatorInput').val(),
                 reason: $('.textAreaInput').val(),
                 pictureType: selectedPicture,
-                recognizedName: $('.nameInput').val()
+                recognizedName: $('.nameInput').val(),
+                lang: languageId
             },
             success: function(data){
                 lineId = data;
@@ -70,7 +82,7 @@ $(document).ready(function(){
         currentSlide(id+1);
 
         if(id+1==2){
-            $('.carouselSectionElegant').show();
+            $('.carouselSectionFun').show();
         }
 
         window.scrollTo(0, 0);
@@ -206,42 +218,34 @@ $(document).ready(function(){
 
     $('.fun-control-prev').on('click', function(){
         $('.carouselSectionFun').carousel('prev');
-        $('.carouselSectionElegant').carousel('prev');
     });
 
     $('.fun-control-next').on('click', function(){
         $('.carouselSectionFun').carousel('next');
-        $('.carouselSectionElegant').carousel('next');
     });
 
     $('.elegant-control-prev').on('click', function(){
         $('.carouselSectionElegant').carousel('prev');
-        $('.carouselSectionFun').carousel('prev');
     });
 
     $('.elegant-control-next').on('click', function(){
         $('.carouselSectionElegant').carousel('next');
-        $('.carouselSectionFun').carousel('next');
     });
 
     $('.carouselSectionElegant').swipeleft(function(){
-        $('.carouselSectionFun').carousel('next');
         $('.carouselSectionElegant').carousel('next');
     });
 
     $('.carouselSectionElegant').swiperight(function(){
-        $('.carouselSectionFun').carousel('prev');
         $('.carouselSectionElegant').carousel('prev');
     });
 
     $('.carouselSectionFun').swipeleft(function(){
         $('.carouselSectionFun').carousel('next');
-        $('.carouselSectionElegant').carousel('next');
     });
 
     $('.carouselSectionFun').swiperight(function(){
         $('.carouselSectionFun').carousel('prev');
-        $('.carouselSectionElegant').carousel('prev');
     });
 
     $('.templateImage').on('load', function(){
@@ -277,6 +281,50 @@ $(document).ready(function(){
 
         window.scrollTo(0, 0);
 
+    }
+
+    function shareInFacebookDialog() {
+        tunnustusLocation = "https://www.kuldsuda.ee/"+imageName.replace(".png", "");
+        //imageLocation = "https://www.kuldsuda.ee/themes/kuldsuda/assets/images/genereeritud_tunnustused/"+imageName;
+
+        FB.ui({
+            method: 'share',
+            href: tunnustusLocation,
+            title: 'Kuldsüda',
+        }, function(response){
+            if (response && !response.error_message) {
+                saveUserAnswer("facebook", "");
+                currentSlide(7);
+            } else {
+                $.notify("Midagi läks valesti!");
+            }
+        });
+
+        /*
+        FB.ui({
+            method: 'share_open_graph',
+            action_type: 'og.shares',
+            action_properties: JSON.stringify({
+                object: {
+                    'og:url': 'https://www.kuldsuda.ee',
+                    'og:title': 'Kuldsüda',
+                    'og:description': 'Oscareid jagatakse kord aastas, aga kuldsüdameid '+
+                                      'saab jagada ka siis, kui kiitmise tunne peale tuleb.'+
+                                      'Võta 3 minutit, et tunnustada kolleegi kuldsüdamega.'+
+                                      'Vali välja sobiv tiitel 10-ne hulgast ning edasta see '+
+                                      'tema Facebooki seinale või e-mailile.',
+                    'og:image': pictureLocation,
+                }
+            })
+        }, function(response){
+            if (response && !response.error_message) {
+              saveUserAnswer();
+              currentSlide(7);
+            } else {
+                $.notify("Midagi läks valesti!");
+            }
+        });
+        */
     }
 
     $('.forwardButton').on('click', function(){
@@ -401,48 +449,12 @@ $(document).ready(function(){
         window.location.replace('https://www.cv.ee/toopakkumised');
     });
 
+    $('.facebookTutImg').on('click', function(){
+        shareInFacebookDialog();
+    });
+
     $('#shareToFacebook').on('click', function(){
-        tunnustusLocation = "https://www.kuldsuda.ee/tunnustused/"+languageId+"/"+imageName;
-        imageLocation = "https://www.kuldsuda.ee/themes/kuldsuda/assets/images/genereeritud_tunnustused/"+imageName;
-
-        FB.ui({
-            method: 'share',
-            href: imageLocation,
-            title: 'Kuldsüda',
-        }, function(response){
-            if (response && !response.error_message) {
-                saveUserAnswer("facebook", "");
-                currentSlide(7);
-            } else {
-                $.notify("Midagi läks valesti!");
-            }
-        });
-
-        /*
-        FB.ui({
-            method: 'share_open_graph',
-            action_type: 'og.shares',
-            action_properties: JSON.stringify({
-                object: {
-                    'og:url': 'https://www.kuldsuda.ee',
-                    'og:title': 'Kuldsüda',
-                    'og:description': 'Oscareid jagatakse kord aastas, aga kuldsüdameid '+
-                                      'saab jagada ka siis, kui kiitmise tunne peale tuleb.'+
-                                      'Võta 3 minutit, et tunnustada kolleegi kuldsüdamega.'+
-                                      'Vali välja sobiv tiitel 10-ne hulgast ning edasta see '+
-                                      'tema Facebooki seinale või e-mailile.',
-                    'og:image': pictureLocation,
-                }
-            })
-        }, function(response){
-            if (response && !response.error_message) {
-              saveUserAnswer();
-              currentSlide(7);
-            } else {
-                $.notify("Midagi läks valesti!");
-            }
-        });
-        */
+        shareInFacebookDialog();
     });
 
     $('#shareToFacebookTest').on('click', function(){
