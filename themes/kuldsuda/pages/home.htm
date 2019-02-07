@@ -12,8 +12,8 @@ function onStart() {
     $files_elegantne = [];
     $count_lobus = 0;
     $count_elegant = 0;
-    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne');
-    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_lobus');
+    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne_svg_est');
+    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_crazy_svg_est');
 
     foreach (new \RecursiveIteratorIterator($di) as $filename => $file) {
         if ($file->getFilename() == "." OR $file->getFilename() == "..")

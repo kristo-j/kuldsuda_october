@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var emailPattern = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
-    var selectedDesign = 'elegantDesign';
+    var selectedDesign = 'funDesign';
     var canvas = document.getElementById('templateCanvas'),
         ctx = canvas.getContext('2d');
     var background = new Image();
@@ -167,12 +167,12 @@ $(document).ready(function(){
             var imgSrc = selectedImage[0]['src'];
 
             if (imgSrc.includes('tunnustused_elegantne')) {
-                imgSrc = imgSrc.replace('tunnustused_elegantne', 'tunnustused_elegantne_png');
+                imgSrc = imgSrc.replace('tunnustused_elegantne_svg', 'tunnustused_elegantne_png');
                 imgSrc = imgSrc.replace('.svg', '.png');
             }
 
-            if (imgSrc.includes('tunnustused_lobus')) {
-                imgSrc = imgSrc.replace('tunnustused_lobus', 'tunnustused_lobus_png');
+            if (imgSrc.includes('tunnustused_crazy')) {
+                imgSrc = imgSrc.replace('tunnustused_crazy_svg', 'tunnustused_crazy_png');
                 imgSrc = imgSrc.replace('.svg', '.png');
             }
 
@@ -187,9 +187,9 @@ $(document).ready(function(){
                     case 'funDesign':
                         ctx.fillStyle = "#244999";
                         ctx.font = "bold 40px arial";
-                        ctx.fillText($('.companyInput').val(), 455, 235);
+                        ctx.fillText($('.companyInput').val(), 655, 305);
                         ctx.font = "bold 40px arial";
-                        ctx.fillText($('.nameInput').val(), 455, 495);
+                        ctx.fillText($('.nameInput').val(), 655, 475);
                         break;
                     case 'elegantDesign':
                         ctx.fillStyle = "white";
