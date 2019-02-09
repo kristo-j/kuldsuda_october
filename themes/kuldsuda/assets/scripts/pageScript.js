@@ -189,7 +189,7 @@ $(document).ready(function(){
                         ctx.font = "bold 40px arial";
                         ctx.fillText($('.companyInput').val(), 655, 305);
                         ctx.font = "bold 40px arial";
-                        ctx.fillText($('.nameInput').val(), 655, 475);
+                        ctx.fillText($('.nameInput').val(), 655, 535);
                         break;
                     case 'elegantDesign':
                         ctx.fillStyle = "white";
