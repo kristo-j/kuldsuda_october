@@ -91,7 +91,7 @@ $(document).ready(function(){
     $('.addPersonName').on('click', function() {
         if(!$('.nameInput').val()) {
             $('.nameInput').addClass('errorBorderStyle');
-            $.notify('E-maili väli peab olema täidetud.');
+            $.notify(languageId === 'est' ? 'Nimi peab olema täidetud.' : 'Все графы должны быть заполнены');
             return;
         } else {
             $('.creatorInput').removeClass('errorBorderStyle');
@@ -103,7 +103,7 @@ $(document).ready(function(){
     $('.generatePicture').on('click', function(){
         if(!$('.creatorInput').val()) {
             $('.creatorInput').addClass('errorBorderStyle');
-            $.notify('E-maili väli peab olema täidetud.');
+            $.notify(languageId === 'est' ? 'E-maili väli peab olema täidetud.' : 'Э-майл должен быть введён');
             return;
         } else {
             $('#senderEmail').val($('.creatorInput').val());
@@ -112,7 +112,7 @@ $(document).ready(function(){
 
         if(!emailPattern.test($('.creatorInput').val())){
             $('.creatorInput').addClass('errorBorderStyle');
-            $.notify('Teie e-mail ei vasta e-maili nõuetele.');
+            $.notify(languageId === 'est' ? 'Teie e-mail ei vasta e-maili nõuetele.' : 'Ваш э-майл не отвечает требованиям');
             return;
         }else{
             $('#senderEmail').removeClass('errorBorderStyle');
@@ -120,7 +120,7 @@ $(document).ready(function(){
 
         if(!$('#confirmationCheckboxSlide').is(':checked')){
             $('.generateCheckBoxSection').addClass('errorBorderStyle');
-            $.notify('Kinnitage, et olete tingimustega tutvunud.');
+            $.notify(languageId === 'est' ? 'Kinnitage, et olete tingimustega tutvunud.' : 'Подтвердите, что ознакомились с условиями');
             return;
         }else{
             $('.generateCheckBoxSection').removeClass('errorBorderStyle');
@@ -187,9 +187,9 @@ $(document).ready(function(){
                     case 'funDesign':
                         ctx.fillStyle = "#244999";
                         ctx.font = "bold 40px arial";
-                        ctx.fillText($('.companyInput').val(), 655, 305);
+                        ctx.fillText($('.companyInput').val(), 655, 315);
                         ctx.font = "bold 40px arial";
-                        ctx.fillText($('.nameInput').val(), 655, 535);
+                        ctx.fillText($('.nameInput').val(), 655, 545);
                         break;
                     case 'elegantDesign':
                         ctx.fillStyle = "white";
@@ -296,7 +296,7 @@ $(document).ready(function(){
                 saveUserAnswer("facebook", "");
                 currentSlide(7);
             } else {
-                $.notify("Midagi läks valesti!");
+                $.notify(languageId === 'est' ? "Midagi läks valesti!" : 'Что-то пошло не так');
             }
         });
 
@@ -364,7 +364,7 @@ $(document).ready(function(){
                 $('#messageBody').removeClass('errorBorderStyle');
             }
 
-            $.notify('Kõik väljad peavad täidetud olema.');
+            $.notify(languageId === 'est' ? 'Kõik väljad peavad täidetud olema.' : 'Все графы должны быть заполнены');
 
             return;
         }
@@ -374,7 +374,7 @@ $(document).ready(function(){
 
         if(!emailPattern.test($('#senderEmail').val())){
             $('#senderEmail').addClass('errorBorderStyle');
-            $.notify('Teie e-mail ei vasta e-maili nõuetele.');
+            $.notify(languageId === 'est' ? 'Teie e-mail ei vasta e-maili nõuetele.' : 'Ваш э-майл не отвечает требованиям');
             return;
         }else{
             $('#senderEmail').removeClass('errorBorderStyle');
@@ -382,7 +382,7 @@ $(document).ready(function(){
 
         if(!emailPattern.test($('#receiverEmail').val())){
             $('#receiverEmail').addClass('errorBorderStyle');
-            $.notify('Kolleegi e-mail ei vasta e-maili nõuetele.');
+            $.notify(languageId === 'est' ? 'Kolleegi e-mail ei vasta e-maili nõuetele.' : 'Э-майл коллеги не отвечает требованиям');
             return;
         }else{
             $('#receiverEmail').removeClass('errorBorderStyle');
@@ -390,7 +390,7 @@ $(document).ready(function(){
 
         if(!$('#confirmationCheckbox').is(':checked')){
             $('.checkBoxSection').addClass('errorBorderStyle');
-            $.notify('Kinnitage, et olete tingimustega tutvunud.');
+            $.notify(languageId === 'est' ? 'Kinnitage, et olete tingimustega tutvunud.' : 'Подтвердите, что ознакомились с условиями');
             return;
         }else{
             $('.checkBoxSection').removeClass('errorBorderStyle');
@@ -413,7 +413,7 @@ $(document).ready(function(){
                 $('.sendEmailModal').modal('toggle');
             },
             failure: function(data){
-                $.notify('E-maili saatmisel tekkis tõrge!');
+                $.notify(languageId === 'est' ? 'E-maili saatmisel tekkis tõrge!' : 'При отправлении э-майла возникла ошибка');
                 $('.sendEmailModal').modal('toggle');
             }
         });

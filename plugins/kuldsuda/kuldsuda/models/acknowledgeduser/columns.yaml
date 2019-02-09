@@ -6,16 +6,8 @@ columns:
     id:
         label: ID
         searchable: true
-    name:
-        label: NIMI
-        searchable: true
-    reason:
-        label: PÕHJUS
-        searchable: true
     email:
         label: EMAIL
-    picture_type:
-        label: PILDI TÜÜP
     sent_type:
         label: SAADETUD
     acknowledged_name:

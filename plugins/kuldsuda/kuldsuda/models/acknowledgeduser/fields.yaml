@@ -6,12 +6,10 @@ fields:
     id:
         label: ID
         disabled: true
-    name:
-        label: NIMI
-    reason:
-        label: PÕHJUS
     email:
         label: EMAIL
+    reason:
+        label: PÕHJUS
     picture_type:
         label: PILDI TÜÜP
     sent_type:
