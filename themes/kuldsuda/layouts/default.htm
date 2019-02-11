@@ -3,10 +3,13 @@ description = "default layout"
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/styles/insta_bundle.css'|theme }}" />
         <link href="{{ 'assets/scripts/bootstrap/css/bootstrap.min.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/scripts/bootstrap/css/bootstrap-grid.min.css'|theme }}" rel="stylesheet">
         <link href="{{ 'assets/scripts/bootstrap/css/bootstrap-reboot.min.css'|theme }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ 'assets/styles/style.css'|theme }}" type="text/css">
+        <link rel="stylesheet" href="{{ 'assets/styles/insta_styles.css'|theme }}" type="text/css">
+
         {% styles %}
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -70,6 +73,7 @@ description = "default layout"
         <script src="{{ 'assets/scripts/jquery/jquery.mobile.custom.min.js'|theme }}"></script>
         <script src="{{ 'assets/scripts/bootstrap/js/bootstrap.min.js'|theme }}"></script>
         <script src="{{ 'assets/scripts/notify/notify.min.js'|theme }}"></script>
+        <script src="{{ 'assets/scripts/moment/moment.js'|theme }}"></script>
         <script src="{{ 'assets/scripts/pageScript.js'|theme }}"></script>
         {% scripts %}
 

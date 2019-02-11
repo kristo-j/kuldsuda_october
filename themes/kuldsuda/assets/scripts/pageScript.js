@@ -57,7 +57,7 @@ $(document).ready(function(){
                 lineId = data;
             },
             failure: function(){
-                $.notify("Midagi läks valesti!");
+                $.notify(languageId === 'est' ? 'Midagi läks valesti!' : 'Что-то пошло не так');
             }
         });
     }
