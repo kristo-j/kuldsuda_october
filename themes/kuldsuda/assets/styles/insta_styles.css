@@ -1907,3 +1907,77 @@ div.social.tiles .fb-like iframe {
         font-size: 21px;
     }
 }
+
+#element-636 .dynamic-button {
+    background-color: #39b54a;
+
+    color: #ffffff;
+
+
+}
+
+#element-636 .dynamic-button:active {
+}
+
+#element-636 .dynamic-button:hover {
+    background-color: #2e91d0;
+}
+
+
+#element-636 .dynamic-button, #element-636 .image-button {
+    width: 348px;
+    height: 60px;
+    z-index: 6;
+    line-height: 24px;
+    font-size: 21px;
+    font-weight: 900;
+    font-family: Lato;
+    border-radius: 40px;
+}
+
+@media screen and ( max-width: 620px ), screen and ( max-width: 999px ) and ( -webkit-min-device-pixel-ratio: 1.5 ) and ( max-device-width: 1280px ) and ( max-device-height: 720px ), screen and ( max-width: 999px ) and ( -webkit-min-device-pixel-ratio: 1.5 ) and ( max-device-width: 1000px ) {
+    body:not( .tablet ) #page-block-qdgliyzvy3k #element-636 .dynamic-button, body:not( .tablet ) #page-block-qdgliyzvy3k #element-636 .image-button {
+        width: 348px;
+        height: 60px;
+        z-index: 6;
+        line-height: 60px;
+        font-size: 21px;
+    }
+}
+
+#element-642 .dynamic-button {
+    background-color: #ac7f35;
+
+    color: #ffffff;
+
+
+}
+
+#element-642 .dynamic-button:active {
+}
+
+#element-642 .dynamic-button:hover {
+    background-color: #f8cc6c;
+}
+
+
+#element-642 .dynamic-button, #element-642 .image-button {
+    width: 352px;
+    height: 60px;
+    z-index: 11;
+    line-height: 24px;
+    font-size: 21px;
+    font-weight: 900;
+    font-family: Lato;
+    border-radius: 40px;
+}
+
+@media screen and ( max-width: 620px ), screen and ( max-width: 999px ) and ( -webkit-min-device-pixel-ratio: 1.5 ) and ( max-device-width: 1280px ) and ( max-device-height: 720px ), screen and ( max-width: 999px ) and ( -webkit-min-device-pixel-ratio: 1.5 ) and ( max-device-width: 1000px ) {
+    body:not( .tablet ) #page-block-ssj30b9bu2i #element-642 .dynamic-button, body:not( .tablet ) #page-block-ssj30b9bu2i #element-642 .image-button {
+        width: 352px;
+        height: 60px;
+        z-index: 11;
+        line-height: 60px;
+        font-size: 21px;
+    }
+}
