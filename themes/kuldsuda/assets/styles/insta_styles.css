@@ -774,12 +774,7 @@ div.social.tiles .fb-like iframe {
 }
 
 #page-block-qdgliyzvy3k {
-    height: 736px;
-}
-
-.dynamic-button {
-	padding-top: 5%;
-	padding-bottom: 5%;
+    height: 950px;
 }
 
 #page-block-qdgliyzvy3k .border-holder {
@@ -802,7 +797,7 @@ div.social.tiles .fb-like iframe {
     border-bottom-width: 0px;
 
 
-    height: 736px;
+    height: 950px;
 
 }
 
@@ -870,30 +865,23 @@ div.social.tiles .fb-like iframe {
 }
 
 #page-block-0jr38n9cmc2f {
-    height: 88px;
+    height: 115px;
 }
 
 #page-block-0jr38n9cmc2f .border-holder {
     background-image: none;
-
     background-color: #244999;
-
     background-repeat: no-repeat;
     background-position: center center;
-
     -moz-background-size: auto auto;
     -o-background-size: auto auto;
     -webkit-background-size: auto auto;
     background-size: auto auto;
-
-
     width: auto;
     border-width: 0;
     border-top-width: 0px;
     border-bottom-width: 0px;
-
-
-    height: 88px;
+    height: 115px;
 
 }
 
@@ -1966,6 +1954,7 @@ div.social.tiles .fb-like iframe {
 		max-width: 100%;
 		min-width: 400px;
 		width: auto;
+	}
 }
 
 #element-642 .dynamic-button:active {
@@ -1974,7 +1963,6 @@ div.social.tiles .fb-like iframe {
 #element-642 .dynamic-button:hover {
     background-color: #f8cc6c;
 }
-
 
 #element-642 .dynamic-button, #element-642 .image-button {
     width: 352px;
@@ -1985,6 +1973,11 @@ div.social.tiles .fb-like iframe {
     font-weight: 900;
     font-family: Lato;
     border-radius: 40px;
+}
+
+#element-642 .dynamic-button {
+    background-color: #ac7f35;
+    color: #ffffff;
 }
 
 @media screen and ( max-width: 620px ), screen and ( max-width: 999px ) and ( -webkit-min-device-pixel-ratio: 1.5 ) and ( max-device-width: 1280px ) and ( max-device-height: 720px ), screen and ( max-width: 999px ) and ( -webkit-min-device-pixel-ratio: 1.5 ) and ( max-device-width: 1000px ) {

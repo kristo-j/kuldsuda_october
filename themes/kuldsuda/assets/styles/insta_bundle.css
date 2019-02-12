@@ -263,10 +263,6 @@ td, th {
     content: "\E014"
 }
 
-.insta-tunnusta {
-    padding-top: 0.15em;
-}
-
 .glyphicon-zoom-in:before {
     content: "\E015"
 }
@@ -12956,4 +12952,20 @@ div.widget-timer .timer.no-labels .timer-labels {
 div.widget-timer .timer.no-labels .colon, div.widget-timer .timer.no-labels .days, div.widget-timer .timer.no-labels .hours, div.widget-timer .timer.no-labels .minutes, div.widget-timer .timer.no-labels .seconds {
     height: 100%;
     top: 0
+}
+
+.insta-tunnusta {
+    padding-top: 0.50em;
+}
+
+@media screen and ( max-width: 500px ) {
+	.insta-tunnusta {
+		padding-top: 1em;
+	}
+}
+
+@media screen and ( max-width: 750px ) {
+	.insta-tunnusta {
+		padding-top: 0.90em;
+	}
 }
