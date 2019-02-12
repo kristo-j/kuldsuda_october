@@ -16,7 +16,6 @@ img {vertical-align: middle;}
 /* Slideshow container */
 .slideshow-container {
     height: 100%;
-    position: absolute;
     margin: auto;
 }
 
@@ -942,6 +941,13 @@ input{
     .fbShareDiv {
         padding-left: 10%;
         padding-right: 10%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+	.shareButton
+    {
+        width: 100%;
     }
 }
 

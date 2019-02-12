@@ -123,7 +123,7 @@ is_hidden = 0
         <link rel="stylesheet" href="./themes/kuldsuda/assets/styles/style.css" type="text/css">
         <link rel="stylesheet" href="./themes/kuldsuda/assets/scripts/bootstrap/css/bootstrap.min.css" type="text/css">
 
-        <meta property="og:title"              content="золотое сердце" />
+        <meta property="og:title"              content="золотое сердце #märkainimest" />
         <meta property="og:description"        content="Награди коллегу или образец подражания!!" />
         <meta property="og:image" 	   		   content="https://www.kuldsuda.ee/themes/kuldsuda/assets/images/genereeritud_tunnustused/'.$pictureFile.'" />
         <meta property="og:image:width" 	   content="1200" /> 
@@ -160,7 +160,7 @@ is_hidden = 0
         <link rel="stylesheet" href="./themes/kuldsuda/assets/styles/style.css" type="text/css">
         <link rel="stylesheet" href="./themes/kuldsuda/assets/scripts/bootstrap/css/bootstrap.min.css" type="text/css">
 
-        <meta property="og:title"              content="Kuldsüda" />
+        <meta property="og:title"              content="Kuldsüda #märkainimest" />
         <meta property="og:description"        content="Tunnusta head kolleegi või märgatud eeskuju!" />
         <meta property="og:image" 	   		   content="https://www.kuldsuda.ee/themes/kuldsuda/assets/images/genereeritud_tunnustused/'.$pictureFile.'" />
         <meta property="og:image:width" 	   content="1200" /> 

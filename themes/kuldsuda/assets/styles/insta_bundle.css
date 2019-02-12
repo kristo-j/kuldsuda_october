@@ -263,6 +263,10 @@ td, th {
     content: "\E014"
 }
 
+.insta-tunnusta {
+    padding-top: 0.15em;
+}
+
 .glyphicon-zoom-in:before {
     content: "\E015"
 }

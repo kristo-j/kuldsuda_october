@@ -4,6 +4,7 @@ layout = "default"
 description = "kuldsuda home"
 is_hidden = 0
 ==
+<?php
 use Cms\Classes\Theme;
 
 function onStart() {
@@ -12,8 +13,8 @@ function onStart() {
     $files_elegantne = [];
     $count_lobus = 0;
     $count_elegant = 0;
-    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne_svg_est');
-    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_crazy_svg_est');
+    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne_png_est');
+    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_crazy_png_est');
 
     foreach (new \RecursiveIteratorIterator($di) as $filename => $file) {
         if ($file->getFilename() == "." OR $file->getFilename() == "..")
@@ -34,11 +35,12 @@ function onStart() {
     $this['count_elegant'] = $count_elegant;
     $this['count_lobus'] = $count_lobus;
 }
+?>
 ==
 <div id="languageElem" style="display:none;" value="est"></div>
-<div class="slideshow-container col-12">
+<div class="slideshow-container col-12" style="padding: 0px">
 
-    <div class="mySlides ">
+    <div class="mySlides">
         {% partial 'landing' %}
     </div>
 
@@ -59,8 +61,8 @@ function onStart() {
         <div class="templateSection" align="center">
             <div id="carouselSection" class="carousel slide carouselContent carouselSectionFun" data-ride="carousel" data-interval="false" style="display: none;">
                 <div class="carousel-inner carousel-fun">
-                    {% for i in 1..count_lobus-1 %}
-                        {% if i == 1 %}
+                    {% for i in 0..count_lobus-1 %}
+                        {% if i == 0 %}
                             <div class="carousel-item active ">
                                 <div class="imageContainer">
                                     <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
@@ -87,8 +89,8 @@ function onStart() {
 
             <div id="carouselSection" class="carousel slide carouselContent carouselSectionElegant" data-ride="carousel" data-interval="false" style="display: none;">
                 <div class="carousel-inner carousel-elegant">
-                    {% for i in 1..count_elegant-1 %}
-                        {% if i == 1 %}
+                    {% for i in 0..count_elegant-1 %}
+                        {% if i == 0 %}
                             <div class="carousel-item active ">
                                 <div class="imageContainer">
                                     <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
@@ -189,9 +191,7 @@ function onStart() {
         <div class="actionText" align="center">
             <p>Aitäh! Tunnustust näed, kui vajutad nuppu "Genereerin tunnustuse".</p>
             <p>
-                Osale ka <mark class="textMarker">AASTA KULDSÜDA</mark> tiitli valimises, kirjutades siia lahtrisse,
-                miks tunnustatav on ära teeninud kuldsüdame tiitli ning lisades
-                alumisse lahtrisse enda e-maili.
+                Selleks, et osaleda kuldse <mark class="textMarker">iPadi</mark> loosimises ole hea ja jaga meiega oma e-maili.
             </p>
         </div>
         <div class="creatorActionText" align="center">

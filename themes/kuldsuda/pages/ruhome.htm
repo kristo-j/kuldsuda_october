@@ -12,8 +12,8 @@ function onStart() {
     $files_elegantne = [];
     $count_lobus = 0;
     $count_elegant = 0;
-    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne_svg_ru');
-    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_crazy_svg_ru');
+    $di = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_elegantne_png_ru');
+    $dil = new \RecursiveDirectoryIterator($theme->getActiveTheme()->getPath() . '/assets/images/tunnustused_crazy_png_ru');
 
     foreach (new \RecursiveIteratorIterator($di) as $filename => $file) {
         if ($file->getFilename() == "." OR $file->getFilename() == "..")
@@ -36,52 +36,10 @@ function onStart() {
 }
 ==
 <div id="languageElem" style="display:none;" value="ru"></div>
-<div class="slideshow-container col-12">
+<div class="slideshow-container">
 
     <div class="mySlides ">
-        <div class="slideTitle" align="center">
-            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01_RU.svg'|theme }}" alt="Logo" />
-            <!--
-            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
-            <p class="slideTitleElement companyElement">CV.ee</p>
-            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
-            -->
-        </div>
-        <div class="actionLine" align="center"><p>Награди коллегу или образец подражания!</p></div>
-        <div class="informationLine" align="center">
-            <div>
-                <p>
-                    Оскары вручаются раз в год, лучший работодатели тоже награждены, а золотое сердце можно вручить в
-                    любой момент, когда захочется. <mark class="textMarker">Найди 3 минуты</mark> и награди коллегу золотым сердцем! Выбери подходящий
-                    титул и отправь коллеге на электронную почту или на стену в <mark class="textMarker">Facebook’е</mark>.
-                </p>
-                <p class="examplesText">
-                    Посмотри разные примеры
-                </p>
-            </div>
-        </div>
-        <div class="photoSection" align="center">
-            <div id="carouselSection" class="carousel slide carouselContent exampleCarousel" data-ride="carousel" data-interval="false" style="display: none;">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="imageContainer">
-                            <img id="" class="imageContainer" src="{{ '/assets/images/tunnustus_n2idis_1_RU.png'|theme }}" alt="picture" class="img-responsive"/>
-                        </div>
-                    </div>
-                </div>
-                <p class="carousel-control-prev example-control-prev" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </p>
-                <p class="carousel-control-next example-control-next" href="" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </p>
-            </div>
-        </div>
-        <div class="buttonDiv">
-            <button id="1" type="button" class="forwardButton">Начинаю</button>
-        </div>
+        {% partial 'landing_ru' %}
     </div>
 
     <div class="mySlides ">
@@ -101,8 +59,8 @@ function onStart() {
         <div class="templateSection" align="center">
             <div id="carouselSection" class="carousel slide carouselContent carouselSectionFun" data-ride="carousel" data-interval="false" style="display: none;">
                 <div class="carousel-inner carousel-fun">
-                    {% for i in 1..count_lobus-1 %}
-                        {% if i == 1 %}
+                    {% for i in 0..count_lobus-1 %}
+                        {% if i == 0 %}
                             <div class="carousel-item active ">
                                 <div class="imageContainer">
                                     <img id="" class="imageContainer" src="{{ files_lobus[i]|theme }}" alt="picture" class="img-responsive" name=""/>
@@ -129,8 +87,8 @@ function onStart() {
 
             <div id="carouselSection" class="carousel slide carouselContent carouselSectionElegant" data-ride="carousel" data-interval="false" style="display: none;">
                 <div class="carousel-inner carousel-elegant">
-                    {% for i in 1..count_elegant-1 %}
-                        {% if i == 1 %}
+                    {% for i in 0..count_elegant-1 %}
+                        {% if i == 0 %}
                             <div class="carousel-item active ">
                                 <div class="imageContainer">
                                     <img id="" class="imageContainer" src="{{ files_elegantne[i]|theme }}" alt="picture" class="img-responsive" name=""/>
@@ -268,7 +226,7 @@ function onStart() {
 
         </div>
         <div class="facebookTutorialDiv" align="center">
-            <img class="facebookTutImg" src="{{ '/assets/images/imago_jaga_ajajoonel_uus_1.svg'|theme }}"/>
+            <img class="facebookTutImg" src="{{ '/assets/images/ru_fb_box.png'|theme }}"/>
             <p class="tutorialText">
                 NB! Когда вы открываете окно для публикации в Facebook,
                 выберите «Поделитесь в хронике друга» в раскрывающемся
@@ -282,37 +240,7 @@ function onStart() {
     </div>
 
     <div class="mySlides orderSlide">
-        <div class="slideTitle" align="center">
-            <img class="bannerElement" src="{{ '/assets/images/kuldsuda_logo-01.svg'|theme }}" alt="Logo" />
-            <!--
-            <img class="slideTitleElement companyLogo" src="./photos/cv_logo-01.png" alt="Logo" />
-            <p class="slideTitleElement companyElement">CV.ee</p>
-            <p class="slideTitleElement activityElement">#tunnustakolleegi</p>
-            -->
-        </div>
-        <div class="stepNumber" align="center"></div>
-        <div class="actionText" align="center">
-            <p>CV.ee от всего сердца благодарит тебя за то, что нашел время для награждения!
-            </p>
-        </div>
-        <div class="photoSection" align="center">
-            <img class="imageContainer" src="{{ '/assets/images/1200x628px_imago_uus_loos-02.svg'|theme }}" alt="" />
-        </div>
-
-        <div class="fbShareDiv">
-            <div class="fb-like" data-href="https://www.facebook.com/cvonlineestonia"
-                 data-layout="standard" data-action="like" data-size="large" data-show-faces="true"
-                 data-share="true"></div>
-        </div>
-        <div class="buttonDiv">
-            <button id="generateNew" type="button" class="finishButton">Наградить следующего человека!</button>
-            <!--<button id="checkJobOffers" type="button" class="finishButton">Vaata tööpakkumisi</button>-->
-        </div>
-        <div class="footerDiv">
-            <a href="https://www.cv.ee/toopakkumised">
-                <img class="imageContainer" src="{{ '/assets/images/FooterImage.jpg'|theme }}" alt="" />
-            </a>
-        </div>
+        {% partial 'finish_ru' %}
     </div>
 
 </div>

@@ -758,6 +758,12 @@ div.social.tiles .fb-like iframe {
     }
 }
 
+@media only screen and (max-width: 500px) {
+    .dynamic-button {
+		padding: 0;
+	}
+}
+
 #page-block-tw1x0anxsy .color-overlay {
     display: none;
 }
@@ -769,6 +775,11 @@ div.social.tiles .fb-like iframe {
 
 #page-block-qdgliyzvy3k {
     height: 736px;
+}
+
+.dynamic-button {
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 #page-block-qdgliyzvy3k .border-holder {
@@ -902,7 +913,7 @@ div.social.tiles .fb-like iframe {
 }
 
 @media screen and (max-width: 620px), screen and (max-width: 999px) and (-webkit-min-device-pixel-ratio: 1.5) and ( max-device-width: 1280px ) and (max-device-height: 720px), screen and (max-width: 999px) and (-webkit-min-device-pixel-ratio: 1.5) and ( max-device-width: 1000px ) {
-    body {
+    .insta_body {
         min-width: 400px;
         width: 100%;
     }
@@ -1947,10 +1958,14 @@ div.social.tiles .fb-like iframe {
 
 #element-642 .dynamic-button {
     background-color: #ac7f35;
-
     color: #ffffff;
+}
 
-
+@media (max-width: 700px) {
+	body.new_mobile {
+		max-width: 100%;
+		min-width: 400px;
+		width: auto;
 }
 
 #element-642 .dynamic-button:active {

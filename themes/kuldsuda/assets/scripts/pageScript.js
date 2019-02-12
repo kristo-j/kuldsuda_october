@@ -165,7 +165,7 @@ $(document).ready(function(){
             ctx.canvas.width = 1200;
             ctx.canvas.height = 630;
             var imgSrc = selectedImage[0]['src'];
-
+/*
             if (imgSrc.includes('tunnustused_elegantne')) {
                 imgSrc = imgSrc.replace('tunnustused_elegantne_svg', 'tunnustused_elegantne_png');
                 imgSrc = imgSrc.replace('.svg', '.png');
@@ -175,7 +175,7 @@ $(document).ready(function(){
                 imgSrc = imgSrc.replace('tunnustused_crazy_svg', 'tunnustused_crazy_png');
                 imgSrc = imgSrc.replace('.svg', '.png');
             }
-
+*/
             background.src = imgSrc;
 
             saveRecognition();
