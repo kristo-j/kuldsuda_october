@@ -4,6 +4,7 @@ layout = "default"
 description = "kuldsuda home russian"
 is_hidden = 0
 ==
+<?php
 use Cms\Classes\Theme;
 
 function onStart() {
@@ -34,6 +35,7 @@ function onStart() {
     $this['count_elegant'] = $count_elegant;
     $this['count_lobus'] = $count_lobus;
 }
+?>
 ==
 <div id="languageElem" style="display:none;" value="ru"></div>
 <div class="slideshow-container">
@@ -141,7 +143,7 @@ function onStart() {
             </p>
         </div>
         <div class="contentSection" align="center">
-            <input type="text" class="form-group companyInput borderStyle" maxLength="22" placeholder="Название предприятия"/>
+            <input type="text" class="form-group companyInput borderStyle" maxLength="22" placeholder="Название фирмы"/>
             <div class=" inputNote">
                 <p>Максимальное кол-во знаков – 22</p>
             </div>
@@ -186,14 +188,13 @@ function onStart() {
         </div>
         <div class="stepNumber" align="center">Шаг 4/5</div>
         <div class="actionText" align="center">
-            <p>Спасибо! Готовую награду увидишь, нажав на кнопку “Сгенерировать награду</p>
+            <p>Спасибо! Готовую награду увидите, нажав на кнопку "Сгенерировать награду"</p>
             <p>
-                Участвуй в выборах <mark class="textMarker">ЗОЛОТОГО СЕРДЦА ГОДА</mark>. Для этого тебе нужно написать в эту графу,
-                почему награждённый достоин этого титла, а также добавить свою электронную почту в нижнюю графу.
+                Чтобы участвовать в розыгрыше <mark class="textMarker">iPad</mark>, будьте добры и поделитесь своей электронной почтой.
             </p>
         </div>
         <div class="creatorActionText" align="center">
-            <input type="text" class="form-group creatorInput borderStyle" maxLength="40" placeholder="Твоя электронная почта"/>
+            <input type="text" class="form-group creatorInput borderStyle" maxLength="40" placeholder="Ваш е-mail"/>
             <div class=" inputNote">
                 <p>Максимальное кол-во знаков – 40</p>
             </div>
@@ -203,7 +204,7 @@ function onStart() {
             <p>Я ознакомлен с тем, что CV.ee использует мою электронную почту для предоставления информации связанной с компанией “Золотое сердце”.</p>
         </div>
         <div class="buttonDiv">
-            <button id="5" type="button" class="generatePicture">Сгенерировать призвание</button>
+            <button id="5" type="button" class="generatePicture">Сгенерировать награду</button>
         </div>
     </div>
 
